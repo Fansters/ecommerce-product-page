@@ -3,16 +3,17 @@
 :root {
 	--font-base: "Kumbh Sans", serfif;
 
-	--color-orange: hsl(26, 100%, 55%);
-	--pale-orange: hsl(25, 100%, 94%);
-	--very-dark-blue: hsl(220, 13%, 13%);
-	--dark-grayish-blue: hsl(219, 9%, 45%);
-	--grayish-blue: hsl(220, 14%, 75%);
-	--light-grayish-blue: hsl(223, 64%, 98%);
-	--color-white: hsl(0, 0%, 100%);
-	--color-blakc: hsl(0, 0%, 0%);
+	--color-orange: rgb(255, 125, 26);
+	--pale-orange: rgb(255, 237, 224);
+	--very-dark-blue: rgb(29, 32, 37);
+	--dark-grayish-blue: rgb(104, 112, 125);
+	--grayish-blue: rgb(182, 188, 200);
+	--light-grayish-blue: rgb(247, 248, 253);
+	--color-white: rgb(255, 255, 255);
+	--color-blakc: rgb(0, 0, 0);
 
 	--font-size: 2rem;
+   --font-p:.9375rem;
 	--font-normal: 400;
 	--font-bold: 700;
 }

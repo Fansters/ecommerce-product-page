@@ -7,9 +7,9 @@
 	justify-content: center;
 	align-items: center;
 }
+
 .p-text {
-	font-size: 1rem;
 	text-align: left;
-	color: var(--dark-grayish-blue);
-	line-height: 1.5;
+	color: var(--brown-color);
+	line-height: 2.5;
 }
