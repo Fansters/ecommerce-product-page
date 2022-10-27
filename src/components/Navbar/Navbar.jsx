@@ -46,6 +46,7 @@ const Navbar = () => {
 								<a className={`navLink-${item}`} href={`#${item}`}>
 									{item}
 								</a>
+                        <div id='navbar__divv' />
 							</li>
 						))}
 					</ul>
