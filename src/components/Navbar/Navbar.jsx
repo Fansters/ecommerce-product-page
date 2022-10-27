@@ -9,45 +9,21 @@ const Navbar = () => {
 
 	return (
 		<nav className='app__navbar'>
-			<div className='app__navbar-cont'>
-				<div className='app__logo-menu-cont'>
-					<div className='app__logo'>
-						<a href='/'>sneakers</a>
-					</div>
-					<div className='app__menu'>
-						<ul className='app__navbar-links'>
-							{["collections", "men", "women", "about", "contact"].map((item) => (
-								<li className='app__flex p-text' key={`link-${item}`}>
-									<a className={`navLink-${item}`} href={`#${item}`}>
-										{item}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
-				</div>
-				<div className='app__cta-btns'>
-					<div className='app__cta-cart'>
-						<a href='/'>
-							<img src={images.cartIcon} alt='cart' />
-						</a>
-					</div>
-					<div className='app__cta-avatar'>
-						<a href='/'>
-							<img src={images.avatar} alt='avatar' />
-						</a>
-					</div>
-				</div>
-			</div>
-
 			{/* Burger menu */}
-			<div className='app__navbar-menu'>
-				<HiMenuAlt4 onClick={() => setToggle(true)} />
+			<div className='app__navbar-menu '>
+				<div onClick={() => setToggle(true)}>
+					<img src={images.menuIcon} alt='menu' />
+				</div>
+				<div className='app__flex app__logo app__logo-mobile'>
+					<a href='/'>sneakers</a>
+				</div>
 				{toggle && (
-					<div whileInView={{ x: [400, 0] }} transition={{ duration: 0.85, ease: "easeInOut" }}>
-						<HiX onClick={() => setToggle(false)} />
+					<div className='app__menu-container'>
+						<div onClick={() => setToggle(false)}>
+							<img src={images.closeIcon} alt='close' />
+						</div>
 						<ul>
-							{["home", "about", "work", "skills", "contact"].map((item) => (
+							{["collections", "men", "women", "about", "contact"].map((item) => (
 								<li key={item}>
 									<a href={`#${item}`} onClick={() => setToggle(false)}>
 										{item}
@@ -57,6 +33,35 @@ const Navbar = () => {
 						</ul>
 					</div>
 				)}
+			</div>
+			{/* Desktop menu */}
+			<div className='app__logo-menu-cont'>
+				<div className='app__logo'>
+					<a href='/'>sneakers</a>
+				</div>
+				<div className='app__menu'>
+					<ul className='app__navbar-links'>
+						{["collections", "men", "women", "about", "contact"].map((item) => (
+							<li className='app__flex p-text' key={`link-${item}`}>
+								<a className={`navLink-${item}`} href={`#${item}`}>
+									{item}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+			<div className='app__cta-btns'>
+				<div className='app__cta-cart'>
+					<a href='/'>
+						<img src={images.cartIcon} alt='cart' />
+					</a>
+				</div>
+				<div className='app__cta-avatar'>
+					<a href='/'>
+						<img src={images.avatar} alt='avatar' />
+					</a>
+				</div>
 			</div>
 		</nav>
 	);
