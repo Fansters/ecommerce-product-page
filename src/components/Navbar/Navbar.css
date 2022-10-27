@@ -1,0 +1,33 @@
+.app__navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: aliceblue;
+	height: 6.25rem;
+}
+.app__navbar-cont {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: antiquewhite;
+}
+.app__logo-menu-cont {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.app__logo {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: var(--font-size);
+   font-weight: var(--font-bold);
+   letter-spacing:-2px;
+   /* line-height: -4px; */
+}
+.app__cta-btns {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

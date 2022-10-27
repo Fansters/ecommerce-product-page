@@ -2,8 +2,14 @@
 	padding: 4rem 6rem;
 }
 
-.flex__center {
+.app__flex {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.p-text {
+	font-size: 1rem;
+	text-align: left;
+	color: var(--dark-grayish-blue);
+	line-height: 1.5;
 }
