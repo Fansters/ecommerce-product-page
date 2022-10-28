@@ -1,2 +1,4 @@
-export { default as images } from "./images";
-export { default as data } from "./data";
+import images from "./images";
+import data from "./data";
+
+export { images, data };
