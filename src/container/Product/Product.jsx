@@ -10,7 +10,7 @@ const Product = () => {
 
 	return (
 		<div className='app__product app__flex'>
-			<div className='app__product-container app__flex'>
+			<div className='app__product-container'>
 				<div className='app__product-images'>
 					<div className='app__product-img'>
 						<img src={imgs[index]} alt='Shoe' onClick='' />
