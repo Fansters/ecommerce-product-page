@@ -18,20 +18,23 @@ const Navbar = () => {
 					<a href='/'>sneakers</a>
 				</div>
 				{toggle && (
-					<div className='app__menu-container'>
-						<div onClick={() => setToggle(false)}>
-							<img src={images.closeIcon} alt='close' />
+					<>
+						<div className='app__menu-container'>
+							<div onClick={() => setToggle(false)}>
+								<img src={images.closeIcon} alt='close' />
+							</div>
+							<ul>
+								{["collections", "men", "women", "about", "contact"].map((item) => (
+									<li key={item}>
+										<a href={`#${item}`} onClick={() => setToggle(false)}>
+											{item}
+										</a>
+									</li>
+								))}
+							</ul>
 						</div>
-						<ul>
-							{["collections", "men", "women", "about", "contact"].map((item) => (
-								<li key={item}>
-									<a href={`#${item}`} onClick={() => setToggle(false)}>
-										{item}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
+						<div className='app__black-bg' onClick={() => setToggle(false)}></div>
+					</>
 				)}
 			</div>
 			{/* Desktop menu */}
@@ -46,7 +49,7 @@ const Navbar = () => {
 								<a className={`navLink-${item}`} href={`#${item}`}>
 									{item}
 								</a>
-                        <div id='navbar__divv' />
+								<div id='navbar__divv' />
 							</li>
 						))}
 					</ul>
