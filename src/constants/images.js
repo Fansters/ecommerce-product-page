@@ -17,6 +17,7 @@ import nextIcon from "../assets/icon-next.svg";
 import plusIcon from "../assets/icon-plus.svg";
 import previousIcon from "../assets/icon-previous.svg";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	avatar,
 	product1,

@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { data, images } from "../../constants";
 
 import "./Product.css";
 
 const Product = () => {
+	const [index, setIndex] = useState(0);
+	const imgs = [images.product1, images.product2, images.product3, images.product4];
+	const smallImgs = [images.product1T, images.product2T, images.product3T, images.product4T];
+
 	return (
-		<div className='app__product'>
-			<div className='app__product-container'>
+		<div className='app__product app__flex'>
+			<div className='app__product-container app__flex'>
 				<div className='app__product-images'>
-					<div className='app__product-img'>{/* img here */}</div>
-					<div className='app__product-thumbnail'>{/* thumbnails here */}</div>
+					<div className='app__product-img'>
+						<img src={imgs[index]} alt='Shoe' onClick='' />
+					</div>
+					<div className='app__product-thumbnail'>
+						{smallImgs?.map((item, i) => (
+							<img
+								src={item}
+								alt='small Shoe'
+								// className={i === index ? "small-image selected-image" : "small-image"}
+								onClick={() => setIndex(i)}
+							/>
+						))}
+					</div>
 				</div>
 				<div className='app__product-desc'>
 					<p className='app__company-title'>{data.shoes[0].company}</p>
