@@ -17,8 +17,12 @@ import nextIcon from "../assets/icon-next.svg";
 import plusIcon from "../assets/icon-plus.svg";
 import previousIcon from "../assets/icon-previous.svg";
 
+const bigImgs = [product1, product2, product3, product4];
+const smallImgs = [product1T, product2T, product3T, product4T];
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
+	bigImgs,
+	smallImgs,
 	avatar,
 	product1,
 	product1T,

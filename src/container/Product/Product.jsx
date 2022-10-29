@@ -5,23 +5,23 @@ import "./Product.css";
 
 const Product = () => {
 	const [index, setIndex] = useState(0);
-	const imgs = [images.product1, images.product2, images.product3, images.product4];
-	const smallImgs = [images.product1T, images.product2T, images.product3T, images.product4T];
+	// const imgs = [images.product1, images.product2, images.product3, images.product4];
+	// const smallImgs = [images.product1T, images.product2T, images.product3T, images.product4T];
 
 	return (
 		<div className='app__product app__flex'>
 			<div className='app__product-container'>
 				<div className='app__product-images'>
 					<div className='app__product-img'>
-						<img src={imgs[index]} alt='Shoe' onClick='' />
+						<img src={images.bigImgs[index]} alt='Shoe' className='big-image' onClick='' />
 					</div>
 					<div className='app__product-thumbnail'>
-						{smallImgs?.map((item, i) => (
+						{images.smallImgs?.map((item, i) => (
 							<img
 								src={item}
 								alt='small Shoe'
-								// className={i === index ? "small-image selected-image" : "small-image"}
-								onClick={() => setIndex(i)}
+								className={i === index ? "small-image selected-image" : "small-image"}
+								onMouseEnter={() => setIndex(i)}
 							/>
 						))}
 					</div>
