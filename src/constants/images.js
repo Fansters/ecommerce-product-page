@@ -9,6 +9,7 @@ import product4T from "../assets/image-product-4-thumbnail.jpg";
 import product4 from "../assets/image-product-4.jpg";
 import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
+import cartIconWhite from "../assets/icon-cart-white.svg";
 import closeIcon from "../assets/icon-close.svg";
 import deleteIcon from "../assets/icon-delete.svg";
 import menuIcon from "../assets/icon-menu.svg";
@@ -34,6 +35,7 @@ export default {
 	product4T,
 	logo,
 	cartIcon,
+	cartIconWhite,
 	closeIcon,
 	deleteIcon,
 	menuIcon,

@@ -31,27 +31,28 @@ const Product = () => {
 					<h2 className='app__product-title'>{data.shoes[0].title}</h2>
 					<p className='app__product-text'>{data.shoes[0].desc}</p>
 					<div className='app__product-newPrice'>
-						<span className='product-price-now'>${data.shoes[0].price} </span>
+						<span className='product-price-now'>${data.shoes[0].price.toFixed(2)} </span>
 						<span className='product-sale'>{data.shoes[0].discount}%</span>
 					</div>
 					<div className='app__product-oldPrice'>
-						<p className='product-price-old'>${data.shoes[0].oldPrice}</p>
+						<p className='product-price-old'>${data.shoes[0].oldPrice.toFixed(2)}</p>
 					</div>
 					<div className='app__product-ctas'>
 						<div className='app__quantity'>
-							<p className='app__quantity-desc'>
-								<span className='minus' onClick=''>
+							<p className='app__quantity-desc app__flex'>
+								<span className='minus app__flex' onClick=''>
 									<img src={images.minusIcon} alt='minus' />
 								</span>
-								<span className='num'>2</span>
-								<span className='plus' onClick=''>
+								<span className='num app__flex'>2</span>
+								<span className='plus app__flex' onClick=''>
 									<img src={images.plusIcon} alt='plus' />
 								</span>
 							</p>
 						</div>
 						<div className='app__buttons'>
-							<button type='button' className='add-to-cart' onClick=''>
-								Add to cart
+							<button type='button' className='add-to-cart app__flex' onClick=''>
+								<img src={images.cartIconWhite} alt='cart icon' />
+								<p className='btn-text'>Add to cart</p>
 							</button>
 						</div>
 					</div>
