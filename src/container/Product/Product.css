@@ -1,6 +1,9 @@
 .app__product {
 	width: 100%;
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .app__product-container {
@@ -179,3 +182,137 @@
 	font-size: 1rem;
 	padding: 0 1rem;
 }
+
+/* mobile view */
+/* max-1000px */
+@media screen and (max-width: 62.5rem) {
+	.app__product-container {
+		max-width: 100%;
+		flex-direction: column;
+		margin-top: 0;
+		justify-content: center;
+	}
+	/* images */
+	.app__product-images,
+	.app__product-desc {
+		padding: 0;
+		max-width: 100%;
+	}
+	.app__product-img {
+		max-width: 100%;
+	}
+	.big-image {
+		object-fit: cover;
+		border-radius: 0;
+		width: 100%;
+		/* height: 20%; */
+		aspect-ratio: 4/3;
+	}
+	.app__product-thumbnail {
+		display: none;
+	}
+
+	/* Desc */
+	.app__product-desc {
+		padding: 1.5rem;
+	}
+	.app__company-title {
+		font-size: 0.8125rem;
+		padding-bottom: 1rem;
+	}
+	.app__product-title {
+		font-size: 1.75rem;
+		padding-bottom: 1rem;
+	}
+	.app__product-text {
+		font-size: 0.9375rem;
+		max-width: 100%;
+	}
+	.app__prices {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 1.5rem;
+		/* flex-direction: column; */
+	}
+	/* .app__product-newPrice {
+		width: 60%;
+	} */
+	.product-price-now {
+		font-size: 2rem;
+	}
+	.app__product-newPrice {
+		padding: 0;
+	}
+	.app__product-oldPrice {
+		padding: 0;
+		display: flex;
+		align-items: center;
+	}
+
+	/* btns */
+	.app__product-ctas {
+		flex-direction: column;
+	}
+	.app__quantity {
+		padding: 0 0 15px 0;
+		width: 100%;
+	}
+	.app__quantity span {
+		width: 100%;
+	}
+	.minus {
+		border-radius: 10px 0 0 10px;
+	}
+	.plus {
+		border-radius: 0 10px 10px 0;
+	}
+	.app__buttons {
+		width: 100%;
+		margin-bottom: 6rem;
+	}
+	.add-to-cart {
+		width: 100%;
+	}
+}
+/* from 600px to 1000px */
+@media screen and (min-width: 37.5rem) and (max-width: 62.5rem) {
+	.app__product-container {
+		max-width: 35rem;
+		padding-top: 2rem;
+		flex-direction: column;
+		margin-top: 0;
+		justify-content: center;
+	}
+}
+/* from 1001px */
+@media screen and (min-width: 62.5625rem) {
+	.app__product-container {
+		max-width: 60rem;
+	}
+	.add-to-cart {
+		width: 11.25rem;
+	}
+   .app__product{
+      margin-bottom: 8rem;
+   }
+}
+
+/* from 1301px */
+@media screen and (min-width: 81.25rem) {
+   .app__product-container {
+		max-width: 70%;
+	}
+	.add-to-cart {
+		width: 18rem;
+	}
+}
+@media screen and (min-width:1600px) {
+   .app__product-container {
+		max-width: 82rem;
+	}
+}
+footer {
+	position: relative;
+}
+
