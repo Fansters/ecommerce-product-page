@@ -17,12 +17,14 @@ const Product = () => {
 					</div>
 					<div className='app__product-thumbnail'>
 						{images.smallImgs?.map((item, i) => (
-							<img
-								src={item}
-								alt='small Shoe'
-								className={i === index ? "small-image selected-image" : "small-image"}
-								onMouseEnter={() => setIndex(i)}
-							/>
+							<div className={i === index ? "small-div-image selected-div" : "small-div-image"}>
+								<img
+									src={item}
+									alt='small Shoe'
+									className={i === index ? " selected-image" : ""}
+									onClick={() => setIndex(i)}
+								/>
+							</div>
 						))}
 					</div>
 				</div>
@@ -43,7 +45,7 @@ const Product = () => {
 								<span className='minus app__flex' onClick=''>
 									<img src={images.minusIcon} alt='minus' />
 								</span>
-								<span className='num app__flex'>2</span>
+								<span className='num app__flex'>0</span>
 								<span className='plus app__flex' onClick=''>
 									<img src={images.plusIcon} alt='plus' />
 								</span>
