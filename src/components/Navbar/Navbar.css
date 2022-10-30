@@ -26,6 +26,7 @@
 .app__logo a {
 	text-decoration: none;
 	color: var(--very-dark-blue);
+	padding: 0 0 6px 14px;
 }
 .app__cta-btns {
 	display: flex;
@@ -90,20 +91,26 @@ ul li:hover #navbar__divv {
 
 /* Mobile menui */
 .app__navbar-menu {
-	width: 150px;
-	position: relative;
+	/* width: 150px; */
+	height: 100%;
+	/* position: relative; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.app__navbar-menu img {
+/* .app__navbar-menu div {
 	padding: 12px 20px 0 0;
-}
-.app__menu-container img {
+} */
+/* .app__navbar-menu img {
+	cursor: pointer;
+} */
+
+/* .app__menu-container img {
 	margin: 1.25rem 0 0 2rem;
-}
+} */
 
 .app__menu-container {
+	padding: 1.75rem 0 0 2rem;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -130,7 +137,7 @@ ul li:hover #navbar__divv {
 	flex-direction: column;
 }
 .app__menu-container li {
-	margin: 0.875rem 0 0 2rem;
+	margin: 0.875rem 0 0 0;
 }
 .app__menu-container li:nth-child(1) {
 	margin-top: 2rem;
@@ -150,10 +157,10 @@ ul li:hover #navbar__divv {
 	left: 0;
 	width: 100%;
 	height: 100vh;
-   z-index: 10;
+	z-index: 10;
 	/* border: 1px solid red; */
 	background-color: black;
-   opacity: .75;
+	opacity: 0.75;
 }
 
 /* desktop menu dissapear till 900px */

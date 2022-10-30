@@ -11,10 +11,10 @@ const Navbar = () => {
 		<nav className='app__navbar'>
 			{/* Burger menu */}
 			<div className='app__navbar-menu '>
-				<div onClick={() => setToggle(true)}>
+				<div className='app__flex' onClick={() => setToggle(true)}>
 					<img src={images.menuIcon} alt='menu' />
 				</div>
-				<div className='app__flex app__logo app__logo-mobile'>
+				<div className='app__logo app__logo-mobile'>
 					<a href='/'>sneakers</a>
 				</div>
 				{toggle && (

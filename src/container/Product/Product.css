@@ -61,9 +61,7 @@
 	transition: all 0.15s ease-in-out;
 	border-radius: 12px;
 }
-.app__product-thumbnail img:hover {
-	opacity: 0.4;
-}
+.app__product-thumbnail img:hover,
 .selected-image {
 	opacity: 0.4;
 }
