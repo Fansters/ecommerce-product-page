@@ -1,32 +1,84 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { data, images } from "../../constants";
 
 import "./Product.css";
 
 const Product = () => {
-	const [index, setIndex] = useState(0);
-	// const imgs = [images.product1, images.product2, images.product3, images.product4];
-	// const smallImgs = [images.product1T, images.product2T, images.product3T, images.product4T];
+	const modalRef = useRef();
+	let [index, setIndex] = useState(0);
+	// const [slideIndex, setSlideIndex] = useState(1)
 
+	function openModal() {
+		modalRef.style.display = "block";
+	}
+	// Close the Modal
+	async function closeModal() {
+		document.getElementById("myModal").style.display = "none";
+	}
+	showSlides(index);
+
+	// Next/previous controls
+	function plusSlides(n) {
+		showSlides((index += n));
+	}
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("demo");
+		if (n > slides.length) {
+			index = 1;
+		}
+		if (n < 1) {
+			index = slides.length;
+		}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		// slides[index - 1].style.display = "block";
+		// dots[index - 1].className += " active";
+		// captionText.innerHTML = dots[index - 1].alt;
+	}
 	return (
 		<>
 			<div className='app__product'>
 				<div className='app__product-container'>
 					<div className='app__product-images'>
-						<div className='app__product-img'>
-							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' onClick='' />
+						<div className='app__product-img' onClick={() => console.log(openModal())}>
+							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' onClick={openModal()} />
 						</div>
 						<div className='app__product-thumbnail'>
 							{images.smallImgs?.map((item, i) => (
-								<div className={i === index ? "small-div-image selected-div" : "small-div-image"}>
+								<div key={i} className={i === index ? "small-div-image selected-div" : "small-div-image"}>
 									<img
 										src={item}
 										alt='small Shoe'
+										key={i}
 										className={i === index ? " selected-image" : ""}
 										onClick={() => setIndex(i)}
 									/>
 								</div>
 							))}
+						</div>
+					</div>
+					{/* Lightbox pics */}
+					<div ref={modalRef} id='myModal' className='app__modal'>
+						<span className='close cursor' onclick={closeModal()}>
+							&times;
+						</span>
+						<div className='modal-content'>
+							<div className='mySlides'>
+								<img src={images.bigImgs[index]} alt='shoes' onClick={openModal()} />
+							</div>
+							{/* <!-- Next/previous controls --> */}
+							<a href='/' className='prev' onclick={plusSlides(1)}>
+								&#10094;
+							</a>
+							<a href='/' className='next' onclick={plusSlides(1)}>
+								&#10095;
+							</a>
 						</div>
 					</div>
 					<div className='app__product-desc'>
