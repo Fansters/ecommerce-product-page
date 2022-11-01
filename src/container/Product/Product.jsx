@@ -22,7 +22,18 @@ const Product = () => {
 						<div className='lightbox-modal'>
 							{isOpen ? (
 								<div onClick={toggleIsOpen} className='lightbox-div'>
-									<img src={images.bigImgs[index]} alt='lightbox shoe' className='lightbox-img' />
+									<div className='lightbox-img-cont'>
+                              <img src={images.bigImgs[index]} alt='lightbox shoe' className='lightbox-img' />
+                              <div className='close-icon'>
+                                 <img src={images.closeIcon} alt="close" />
+                              </div>
+										<div className='prev-icon'>
+											<img src={images.previousIcon} alt='previous' />
+										</div>
+										<div className='next-icon'>
+											<img src={images.nextIcon} alt='next' />
+										</div>
+									</div>
 								</div>
 							) : null}
 						</div>

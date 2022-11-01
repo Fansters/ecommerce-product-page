@@ -79,12 +79,41 @@
 	height: 100vh;
 	width: 100vw;
 	background-color: rgba(0, 0, 0, 0.822);
-	cursor: pointer;
 	z-index: 1000;
+}
+.lightbox-img-cont {
+	position: relative;
 }
 .lightbox-img {
 	width: 500px;
 	height: 500px;
+	cursor: pointer;
+}
+.prev-icon,
+.next-icon,
+.close-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.close-icon {
+   width: 20px;
+   height: 20px;
+	top: -40px;
+	right: 0;
+}
+.close-icon img,
+.next-icon img,
+.prev-icon img {
+	width: 100%;
+}
+.next-icon {
+	right: 0;
 }
 
 /* DESCRIPTION */
