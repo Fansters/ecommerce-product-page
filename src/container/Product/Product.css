@@ -25,6 +25,7 @@
 }
 .app__product-img {
 	max-width: 30rem;
+   cursor: pointer;
 }
 
 .app__product-img img {
@@ -294,6 +295,7 @@ svg:hover {
 	}
 	.app__product-img {
 		max-width: 100%;
+     
 	}
 	.big-image {
 		object-fit: cover;

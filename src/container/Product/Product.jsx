@@ -20,6 +20,7 @@ const Product = () => {
 						<div className='app__product-img' onClick={toggleIsOpen}>
 							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' onClick='' />
 						</div>
+						{/* lightbox modal */}
 						<div className='lightbox-modal'>
 							{isOpen ? (
 								<div className='lightbox-div'>
@@ -60,6 +61,7 @@ const Product = () => {
 								</div>
 							) : null}
 						</div>
+						{/* thumnbnail imgs */}
 						<div className='app__product-thumbnail'>
 							{images.smallImgs?.map((item, i) => (
 								<div key={i} className={i === index ? "small-div-image selected-div" : "small-div-image"}>
@@ -73,6 +75,7 @@ const Product = () => {
 								</div>
 							))}
 						</div>
+						{/* end of thumbnail imgs */}
 					</div>
 
 					<div className='app__product-desc'>
