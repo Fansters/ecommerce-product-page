@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import ImageModal from "../../components/ImageModal/ImageModal";
 import { data, images } from "../../constants";
 
 import "./Product.css";
 
 const Product = () => {
 	let [index, setIndex] = useState(0);
-	let [indexThumb, setIndexThumb] = useState(0);
+	// let [indexThumb, setIndexThumb] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleIsOpen = () => {
@@ -18,49 +19,10 @@ const Product = () => {
 				<div className='app__product-container'>
 					<div className='app__product-images'>
 						<div className='app__product-img' onClick={toggleIsOpen}>
-							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' onClick='' />
+							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' />
 						</div>
 						{/* lightbox modal */}
-						<div className='lightbox-modal'>
-							{isOpen ? (
-								<div className='lightbox-div'>
-									<div className='lightbox-big-img-cont'>
-										<img src={images.bigImgs[indexThumb]} alt='lightbox shoe' className='lightbox-img' />
-										<div className='close-icon' onClick={toggleIsOpen}>
-											<svg width='16' height='17' xmlns='http://www.w3.org/2000/svg'>
-												<path
-													d='m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z'
-													fill-rule='evenodd'
-												/>
-											</svg>
-										</div>
-										<div className='prev-icon'>
-											<svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
-												<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill-rule='evenodd' />
-											</svg>
-										</div>
-										<div className='next-icon'>
-											<svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
-												<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill-rule='evenodd' />
-											</svg>
-										</div>
-									</div>
-									<div className='lightbox-thumb-img-cont'>
-										{images.smallImgs?.map((item, i) => (
-											<div key={i} className={i === indexThumb ? "small-div-image selected-div" : "small-div-image"}>
-												<img
-													src={item}
-													alt='small Shoe'
-													key={i}
-													className={i === indexThumb ? " selected-image" : ""}
-													onClick={() => setIndexThumb(i)}
-												/>
-											</div>
-										))}
-									</div>
-								</div>
-							) : null}
-						</div>
+						<ImageModal />
 						{/* thumnbnail imgs */}
 						<div className='app__product-thumbnail'>
 							{images.smallImgs?.map((item, i) => (
