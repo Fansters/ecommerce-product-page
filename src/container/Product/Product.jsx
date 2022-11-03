@@ -22,7 +22,7 @@ const Product = () => {
 							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' />
 						</div>
 						{/* lightbox modal */}
-						<ImageModal />
+						<ImageModal closeFunc={toggleIsOpen} toggleSwitch={isOpen} modalImg={index} indexSetting={setIndex} />
 						{/* thumnbnail imgs */}
 						<div className='app__product-thumbnail'>
 							{images.smallImgs?.map((item, i) => (
