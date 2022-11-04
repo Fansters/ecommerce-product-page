@@ -3,12 +3,19 @@ import { images } from "../../constants";
 
 import "./ImageModal.css";
 const ImageModal = (props) => {
-	let [index, setIndex] = useState(0);
-	// const [isOpen, setIsOpen] = useState(false);
+	const [index, setIndex] = useState(0);
+	const length = images.smallImgs.length;
 
-	// const toggleIsOpen = () => {
-	// 	setIsOpen(!isOpen);
-	// };
+	const nextSlide = () => {
+		setIndex(index === length - 1 ? 0 : index + 1);
+	};
+	const prevSlide = () => {
+		setIndex(index === 0 ? length - 1 : index - 1);
+	};
+	if (!Array.isArray(images.smallImgs) || images.smallImgs.length <= 0) {
+		return null;
+	}
+
 	return (
 		<div className='lightbox-modal'>
 			{props.toggleSwitch ? (
@@ -23,12 +30,12 @@ const ImageModal = (props) => {
 								/>
 							</svg>
 						</div>
-						<div className='prev-icon'>
+						<div className='prev-icon' onClick={prevSlide}>
 							<svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
 								<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill-rule='evenodd' />
 							</svg>
 						</div>
-						<div className='next-icon'>
+						<div className='next-icon' onClick={nextSlide}>
 							<svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
 								<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill-rule='evenodd' />
 							</svg>
