@@ -30,17 +30,21 @@ const Product = () => {
 				<div className='app__product-container'>
 					<div className='app__product-images'>
 						{/* mobile imgs */}
-						<div className='app__product-img mobile'>
-							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' />
+						<div className='app__product-img mobile noselect'>
+							<img src={images.bigImgs[index]} alt='Shoe' className='big-image noselect' />
 							<div className='prev-icon' onClick={prevSlide}>
-								<svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
-									<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
-								</svg>
+								<button type='button'>
+									<svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
+										<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
+									</svg>
+								</button>
 							</div>
 							<div className='next-icon' onClick={nextSlide}>
-								<svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
-									<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
-								</svg>
+								<button type='button'>
+									<svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
+										<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
+									</svg>
+								</button>
 							</div>
 						</div>
 						{/* end of mobile img */}
@@ -85,11 +89,15 @@ const Product = () => {
 							<div className='app__quantity'>
 								<p className='app__quantity-desc app__flex'>
 									<span className='minus app__flex' onClick=''>
-										<img src={images.minusIcon} alt='minus' />
+										<button type='button'>
+											<img src={images.minusIcon} alt='minus' />
+										</button>
 									</span>
 									<span className='num app__flex'>0</span>
 									<span className='plus app__flex' onClick=''>
-										<img src={images.plusIcon} alt='plus' />
+										<button type='button'>
+											<img src={images.plusIcon} alt='plus' />
+										</button>
 									</span>
 								</p>
 							</div>

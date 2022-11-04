@@ -22,6 +22,8 @@
 .prev-icon,
 .next-icon,
 .close-icon {
+	width: 2.1875rem;
+	height: 2.1875rem;
 	position: absolute;
 	cursor: pointer;
 }
@@ -40,23 +42,42 @@
 .next-icon {
 	right: -22px;
 }
-.close-icon {
+.close-icon button,
+.prev-icon button,
+.next-icon button {
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+button:focus {
+	/* outline: none !important; */
+	outline: 2px solid var(--color-orange);
+	/* box-shadow: 0 0 5px var(--color-orange); */
+}
+/* .close-icon {
 	background-color: transparent;
 	top: -30px;
 	right: 10px;
-	scale: 1.3;
-}
-svg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+/* svg {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translateY(-50%) translateX(-40%);
 	transition: all 0.2s ease-in-out;
 	fill: var(--color-white);
-}
-.prev-icon svg {
+} */
+/* .prev-icon svg {
 	transform: translateY(-50%) translateX(-70%);
-}
+} */
 svg:hover {
 	fill: var(--color-orange);
 }

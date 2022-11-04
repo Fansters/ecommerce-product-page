@@ -12,7 +12,9 @@ const Navbar = () => {
 			{/* Burger menu */}
 			<div className='app__navbar-menu '>
 				<div className='app__flex' onClick={() => setToggle(true)}>
-					<img src={images.menuIcon} alt='menu' />
+					<button type='button'>
+						<img src={images.menuIcon} alt='menu' />
+					</button>
 				</div>
 				<div className='app__logo app__logo-mobile'>
 					<a href='/'>sneakers</a>
@@ -22,7 +24,9 @@ const Navbar = () => {
 						<div className='app__black-bg' onClick={() => setToggle(false)}>
 							<div className='app__menu-container'>
 								<div onClick={() => setToggle(false)}>
-									<img src={images.closeIcon} alt='close' />
+									<button type='button'>
+										<img src={images.closeIcon} alt='close' />
+									</button>
 								</div>
 								<ul>
 									{["collections", "men", "women", "about", "contact"].map((item) => (
