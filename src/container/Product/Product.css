@@ -35,8 +35,8 @@
 .mobile {
 	position: relative;
 }
-.prev-icon,
-.next-icon {
+.mobile .prev-icon,
+.mobile .next-icon {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -48,14 +48,14 @@
 	background-color: var(--color-white);
 	border-radius: 50%;
 }
-.prev-icon {
-	left: 22px;
+.mobile .prev-icon {
+	left: 20px;
 }
-.next-icon {
-	right: 22px;
+.mobile .next-icon {
+	right: 20px;
 }
-.prev-icon button,         
-.next-icon button {
+.mobile .prev-icon button,
+.mobile .next-icon button {
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;

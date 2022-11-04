@@ -37,10 +37,10 @@
 	border-radius: 50%;
 }
 .prev-icon {
-	left: -22px;
+	left: -16px;
 }
 .next-icon {
-	right: -22px;
+	right: -16px;
 }
 .close-icon button,
 .prev-icon button,
@@ -57,7 +57,7 @@
 }
 button:focus {
 	/* outline: none !important; */
-	outline: 2px solid var(--color-orange);
+	outline: 1px solid var(--color-orange);
 	/* box-shadow: 0 0 5px var(--color-orange); */
 }
 /* .close-icon {
