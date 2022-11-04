@@ -15,8 +15,8 @@
 	position: relative;
 }
 .lightbox-img {
-	width: 550px;
-	height: 550px;
+	width: 34.375rem;
+	height: 34.375rem;
 	border-radius: 20px;
 }
 .prev-icon,
@@ -29,8 +29,8 @@
 .next-icon {
 	top: 50%;
 	transform: translateY(-50%);
-	width: 45px;
-	height: 45px;
+	width: 2.8125rem;
+	height: 2.8125rem;
 	background-color: var(--color-white);
 	border-radius: 50%;
 }
@@ -62,7 +62,7 @@ svg:hover {
 }
 
 .lightbox-thumb-img-cont {
-	width: 400px;
+	width: 25rem;
 	padding-top: 1.5rem;
 	display: flex;
 	justify-content: space-between;
@@ -78,7 +78,7 @@ svg:hover {
 }
 .lightbox-thumb-img-cont .small-div-image {
 	background-color: white;
-	border: 3px solid  rgba(0, 0, 0, 0.822);
+	border: 3px solid rgba(0, 0, 0, 0.822);
 	width: 5.25rem;
 	height: 5.25rem;
 	border-radius: 15px;
@@ -90,4 +90,12 @@ svg:hover {
 .lightbox-thumb-img-cont img:hover,
 .selected-image {
 	opacity: 0.4;
+}
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently */
 }

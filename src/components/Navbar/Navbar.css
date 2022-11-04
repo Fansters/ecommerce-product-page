@@ -21,12 +21,11 @@
 	font-size: var(--font-size);
 	font-weight: var(--font-bold);
 	letter-spacing: -2px;
-	/* line-height: -4px; */
 }
 .app__logo a {
 	text-decoration: none;
 	color: var(--very-dark-blue);
-	padding: 0 0 6px 14px;
+	padding: 0 0 0.375rem 0.875rem;
 }
 .app__cta-btns {
 	display: flex;
@@ -44,13 +43,13 @@
 li {
 	position: relative;
 	margin: 0 1rem;
-	padding-top: 10px;
+	padding-top: 0.625rem;
 	cursor: pointer;
 	flex-direction: column;
 }
 
 .app__navbar-links a {
-	padding: 27px 0;
+	padding: 1.6875rem 0;
 	color: var(--dark-grayish-blue);
 	text-decoration: none;
 	text-transform: capitalize;
@@ -64,7 +63,6 @@ li {
 	background: transparent;
 	border-radius: 10px;
 	transition: all 0.2s ease-in-out;
-	/* margin-top: 2px; */
 	transform: translateY(-3px);
 }
 ul li:hover #navbar__divv {
@@ -86,28 +84,16 @@ ul li:hover #navbar__divv {
 }
 .app__cta-avatar img {
 	width: 100%;
-	height: 55px;
+	height: 3.4375rem;
 }
 
 /* Mobile menui */
 .app__navbar-menu {
-	/* width: 150px; */
 	height: 100%;
-	/* position: relative; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-/* .app__navbar-menu div {
-	padding: 12px 20px 0 0;
-} */
-/* .app__navbar-menu img {
-	cursor: pointer;
-} */
-
-/* .app__menu-container img {
-	margin: 1.25rem 0 0 2rem;
-} */
 
 .app__menu-container {
 	display: block;
@@ -161,9 +147,7 @@ ul li:hover #navbar__divv {
 	width: 100%;
 	height: 100vh;
 	z-index: 10;
-	/* border: 1px solid red; */
 	background-color: rgba(0, 0, 0, 0.689);
-	/* opacity: 0.75; */
 }
 
 /* desktop menu dissapear till 900px */
@@ -171,7 +155,7 @@ ul li:hover #navbar__divv {
 	.app__navbar {
 		width: 100%;
 		height: 4.5rem;
-		padding: 0 30px;
+		padding: 0 1.875rem;
 		border-bottom: none;
 	}
 
@@ -188,14 +172,14 @@ ul li:hover #navbar__divv {
 		height: 30px;
 	}
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 62.5rem) {
 	.app__navbar-links li {
 		margin: 0 0.5rem;
 	}
 }
 
 /* burger menu dissapear from 900px */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25rem) {
 	.app__navbar-menu,
 	.app__menu-container {
 		display: none;
@@ -204,13 +188,13 @@ ul li:hover #navbar__divv {
 		width: 100%;
 	}
 }
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 81.25rem) {
 	.app__navbar {
 		width: 70%;
 	}
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 100rem) {
 	.app__navbar {
 		width: 84.375rem;
 	}

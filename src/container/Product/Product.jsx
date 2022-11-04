@@ -6,19 +6,47 @@ import "./Product.css";
 
 const Product = () => {
 	let [index, setIndex] = useState(0);
-	// let [indexThumb, setIndexThumb] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleIsOpen = () => {
 		setIsOpen(!isOpen);
 	};
 
+	const length = images.smallImgs.length;
+
+	const nextSlide = () => {
+		setIndex(index === length - 1 ? 0 : index + 1);
+	};
+	const prevSlide = () => {
+		setIndex(index === 0 ? length - 1 : index - 1);
+	};
+
+	if (!Array.isArray(images.smallImgs) || images.smallImgs.length <= 0) {
+		return null;
+	}
 	return (
 		<>
 			<div className='app__product'>
 				<div className='app__product-container'>
 					<div className='app__product-images'>
-						<div className='app__product-img' onClick={toggleIsOpen}>
+						{/* mobile imgs */}
+						<div className='app__product-img mobile'>
+							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' />
+							<div className='prev-icon' onClick={prevSlide}>
+								<svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
+									<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
+								</svg>
+							</div>
+							<div className='next-icon' onClick={nextSlide}>
+								<svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
+									<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
+								</svg>
+							</div>
+						</div>
+						{/* end of mobile img */}
+
+						{/* desktop imgs */}
+						<div className='app__product-img desktop' onClick={toggleIsOpen}>
 							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' />
 						</div>
 						{/* lightbox modal */}

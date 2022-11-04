@@ -32,23 +32,23 @@ const ImageModal = (props) => {
 						</div>
 						<div className='prev-icon' onClick={prevSlide}>
 							<svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
-								<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill-rule='evenodd' />
+								<path d='M11 1 3 9l8 8' stroke='#1D2026' strokeWidth='3' fillRule='evenodd' />
 							</svg>
 						</div>
 						<div className='next-icon' onClick={nextSlide}>
 							<svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
-								<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill-rule='evenodd' />
+								<path d='m2 1 8 8-8 8' stroke='#1D2026' strokeWidth='3' fillRule='evenodd' />
 							</svg>
 						</div>
 					</div>
 					<div className='lightbox-thumb-img-cont'>
 						{images.smallImgs?.map((item, i) => (
-							<div key={i} className={i === index ? "small-div-image selected-div" : "small-div-image"}>
+							<div key={i} className={i === index ? "small-div-image selected-div" : "small-div-image noselect"}>
 								<img
 									src={item}
 									alt='small Shoe'
 									key={i}
-									className={i === index ? " selected-image" : ""}
+									className={i === index ? " selected-image" : "noselect"}
 									onClick={() => setIndex(i)}
 								/>
 							</div>
