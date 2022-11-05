@@ -34,14 +34,14 @@ const Product = () => {
 							<img src={images.bigImgs[index]} alt='Shoe' className='big-image noselect' />
 							<div className='prev-icon' onClick={prevSlide}>
 								<button type='button'>
-									<svg width='12' height='18' xmlns='http://www.w3.org/2000/svg'>
+									<svg width='16' height='20'  xmlns='http://www.w3.org/2000/svg'>
 										<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
 									</svg>
 								</button>
 							</div>
 							<div className='next-icon' onClick={nextSlide}>
 								<button type='button'>
-									<svg width='13' height='18' xmlns='http://www.w3.org/2000/svg'>
+									<svg width='13' height='20' xmlns='http://www.w3.org/2000/svg'>
 										<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
 									</svg>
 								</button>
