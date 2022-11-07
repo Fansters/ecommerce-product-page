@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { data, images } from "../../constants";
 import ImageModal from "../ImageModal/ImageModal";
+import { useStateContext } from "../../context/StateContext";
 
 import "./Product.css";
 
 const Product = () => {
 	let [index, setIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
-	const [showCart, setShowCart] = useState(false);
-	const [qty, setQty] = useState(1);
+
+	const { decQty, incQty, qty, onAdd } = useStateContext();
 
 	// product data
 	const products = {
@@ -19,16 +20,6 @@ const Product = () => {
 
 	const toggleIsOpen = () => {
 		setIsOpen(!isOpen);
-	};
-
-	const incQty = () => {
-		setQty((prevQty) => prevQty + 1);
-	};
-	const decQty = () => {
-		setQty((prevQty) => {
-			if (prevQty - 1 < 1) return 1;
-			return prevQty - 1;
-		});
 	};
 
 	const length = images.smallImgs.length;
@@ -121,7 +112,7 @@ const Product = () => {
 								</p>
 							</div>
 							<div className='app__buttons'>
-								<button type='button' className='add-to-cart app__flex' onClick=''>
+								<button type='button' className='add-to-cart app__flex' onClick={onAdd}>
 									<img src={images.cartIconWhite} alt='cart icon' />
 									<p className='btn-text'>Add to cart</p>
 								</button>

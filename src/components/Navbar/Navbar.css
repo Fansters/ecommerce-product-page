@@ -7,11 +7,11 @@
 	margin: 0 auto;
 	height: 7.25rem;
 }
-.app__navbar button{
-   border: none;
-   cursor: pointer;
-   background-color: transparent;
-   padding-top: .25rem;
+.app__navbar button {
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+	padding-top: 0.25rem;
 }
 .app__logo-menu-cont {
 	/* height: 7.25rem; */
@@ -78,18 +78,29 @@ ul li:hover #navbar__divv {
 
 .app__cta-cart {
 	padding-right: 2.25rem;
+	position: relative;
+	/* cursor: pointer; */
+}
+.app__cta-cart button {
+	position: relative;
+	cursor: pointer;
 }
 .cart-item-qty {
 	position: absolute;
-	right: -8px;
+	top: -6px;
+	left: 9px;
 	font-size: 12px;
 	color: #eee;
-	background-color: #f02d34;
-	width: 18px;
-	height: 18px;
-	border-radius: 50%;
+	background-color: var(--color-orange);
+	width: 22px;
+	height: 16px;
+	border-radius: 40%;
 	text-align: center;
-	font-weight: 600;
+	font-weight: 700;
+}
+.app__cart-info {
+	position: absolute;
+	top: 50px;
 }
 
 .app__cta-avatar img {

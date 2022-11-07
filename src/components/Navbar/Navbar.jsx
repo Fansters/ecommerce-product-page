@@ -1,11 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { images } from "../../constants";
+import { useStateContext } from "../../context/StateContext";
 import "./Navbar.css";
 
 const Navbar = () => {
+	const cartRef = useRef();
 	const [toggle, setToggle] = useState(false);
+	const { totalPrice, totalQuantities, cartItems, setShowCart } = useStateContext();
 
 	return (
 		<nav className='app__navbar'>
@@ -62,9 +65,11 @@ const Navbar = () => {
 			</div>
 			<div className='app__cta-btns'>
 				<div className='app__cta-cart'>
-					<a href='/'>
+					<button type='button'>
+						<span className='cart-item-qty'>1</span>
 						<img src={images.cartIcon} alt='cart' />
-					</a>
+					</button>
+               <div className='app__cart-info'>1</div>
 				</div>
 				<div className='app__cta-avatar'>
 					<a href='/'>
