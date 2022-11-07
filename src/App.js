@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Product } from "./container";
+import { Product } from "./components";
 import { Navbar } from "./components";
 import "./App.css";
 

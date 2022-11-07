@@ -1,15 +1,34 @@
 import React, { useState } from "react";
-import ImageModal from "../../components/ImageModal/ImageModal";
 import { data, images } from "../../constants";
+import ImageModal from "../ImageModal/ImageModal";
 
 import "./Product.css";
 
 const Product = () => {
 	let [index, setIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
+	const [showCart, setShowCart] = useState(false);
+	const [qty, setQty] = useState(1);
+
+	// product data
+	const products = {
+		title: "Fall limited edition sneakers",
+		id: "1a2b3c",
+		price: 125,
+	};
 
 	const toggleIsOpen = () => {
 		setIsOpen(!isOpen);
+	};
+
+	const incQty = () => {
+		setQty((prevQty) => prevQty + 1);
+	};
+	const decQty = () => {
+		setQty((prevQty) => {
+			if (prevQty - 1 < 1) return 1;
+			return prevQty - 1;
+		});
 	};
 
 	const length = images.smallImgs.length;
@@ -34,15 +53,15 @@ const Product = () => {
 							<img src={images.bigImgs[index]} alt='Shoe' className='big-image noselect' />
 							<div className='prev-icon' onClick={prevSlide}>
 								<button type='button'>
-									<svg width='16' height='20'  xmlns='http://www.w3.org/2000/svg'>
-										<path d='M11 1 3 9l8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
+									<svg width='16' height='20' xmlns='http://www.w3.org/2000/svg'>
+										<path d='M11 1 3 9l8 8' stroke='#1D2026' strokeWidth='3' fill='none' fillRule='evenodd' />
 									</svg>
 								</button>
 							</div>
 							<div className='next-icon' onClick={nextSlide}>
 								<button type='button'>
 									<svg width='13' height='20' xmlns='http://www.w3.org/2000/svg'>
-										<path d='m2 1 8 8-8 8' stroke='#1D2026' stroke-width='3' fill='none' fill-rule='evenodd' />
+										<path d='m2 1 8 8-8 8' stroke='#1D2026' strokeWidth='3' fill='none' fillRule='evenodd' />
 									</svg>
 								</button>
 							</div>
@@ -88,13 +107,13 @@ const Product = () => {
 						<div className='app__product-ctas'>
 							<div className='app__quantity'>
 								<p className='app__quantity-desc app__flex'>
-									<span className='minus app__flex' onClick=''>
+									<span className='minus app__flex' onClick={decQty}>
 										<button type='button'>
 											<img src={images.minusIcon} alt='minus' />
 										</button>
 									</span>
-									<span className='num app__flex'>0</span>
-									<span className='plus app__flex' onClick=''>
+									<span className='num app__flex'>{qty}</span>
+									<span className='plus app__flex' onClick={incQty}>
 										<button type='button'>
 											<img src={images.plusIcon} alt='plus' />
 										</button>
