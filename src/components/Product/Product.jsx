@@ -9,14 +9,14 @@ const Product = () => {
 	let [index, setIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
 
-	const { decQty, incQty, qty, onAdd } = useStateContext();
+	const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
 	// product data
-	const products = {
-		title: "Fall limited edition sneakers",
-		id: "1a2b3c",
-		price: 125,
-	};
+	// const products = {
+	// 	title: "Fall limited edition sneakers",
+	// 	id: "1a2b3c",
+	// 	price: 125,
+	// };
 
 	const toggleIsOpen = () => {
 		setIsOpen(!isOpen);
@@ -36,7 +36,7 @@ const Product = () => {
 	}
 	return (
 		<>
-			<div className='app__product'>
+			<div className='app__product' onClick={() => setShowCart(false)}>
 				<div className='app__product-container'>
 					<div className='app__product-images'>
 						{/* mobile imgs */}

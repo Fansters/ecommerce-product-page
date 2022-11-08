@@ -8,7 +8,7 @@ import "./Navbar.css";
 const Navbar = () => {
 	const cartRef = useRef();
 	const [toggle, setToggle] = useState(false);
-	const { totalPrice, totalQuantities, cartItems, setShowCart } = useStateContext();
+	const { totalPrice, totalQuantities, cartItems, showCart, setShowCart } = useStateContext();
 
 	return (
 		<nav className='app__navbar'>
@@ -65,11 +65,22 @@ const Navbar = () => {
 			</div>
 			<div className='app__cta-btns'>
 				<div className='app__cta-cart'>
-					<button type='button'>
+					<button type='button' onMouseEnter={() => setShowCart(true)}>
 						<span className='cart-item-qty'>1</span>
 						<img src={images.cartIcon} alt='cart' />
 					</button>
-               <div className='app__cart-info'>1</div>
+					{showCart && (
+						<div className='app__cart-info' ref={cartRef} onMouseLeave={() => setShowCart(false)}>
+							<div className='app__cart-title'>
+								<p className='app__cart-heading'>Cart</p>
+							</div>
+							<div className='app__cart-items'>
+								<div className='app__cart-items-cont'>
+									{cartItems.length < 1 && <div className='empty-cart'>Your cart is empty.</div>}
+								</div>
+							</div>
+						</div>
+					)}
 				</div>
 				<div className='app__cta-avatar'>
 					<a href='/'>

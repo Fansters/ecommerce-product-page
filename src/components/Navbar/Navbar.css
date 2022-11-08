@@ -98,9 +98,37 @@ ul li:hover #navbar__divv {
 	text-align: center;
 	font-weight: 700;
 }
+/*  */
 .app__cart-info {
 	position: absolute;
-	top: 50px;
+	top: 60px;
+	left: -175px;
+	background-color: white;
+	width: 350px;
+	height: 250px;
+	border-radius: 10px;
+	box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
+}
+.app__cart-title {
+	padding: 20px;
+	border-bottom: 1px solid var(--grayish-blue);
+}
+.app__cart-heading {
+	font-family: var(--font-base);
+	font-weight: var(--font-bold);
+}
+/* cart items */
+.app__cart-items {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+   height:calc(100% - 60px);
+   padding: 30px 20px;
+}
+/* empty-cart */
+.empty-cart{
+   font-weight: var(--font-bold);
+   color: var(--dark-grayish-blue);
 }
 
 .app__cta-avatar img {
