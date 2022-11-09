@@ -65,12 +65,12 @@ const Navbar = () => {
 			</div>
 			<div className='app__cta-btns'>
 				<div className='app__cta-cart'>
-					<button type='button' onClick={() => setShowCart(true)}>
+					<button type='button' onMouseEnter={() => setShowCart(true)}>
 						{cartItems > 0 && <span className='cart-item-qty'>{cartItems}</span>}
 						<img src={images.cartIcon} alt='cart' />
 					</button>
 					{showCart && (
-						<div className='app__cart-info' ref={cartRef} onClick={() => setShowCart(false)}>
+						<div className='app__cart-info' ref={cartRef} onMouseLeave={() => setShowCart(false)}>
 							<div className='app__cart-title'>
 								<p className='app__cart-heading'>Cart</p>
 							</div>
