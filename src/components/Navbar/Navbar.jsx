@@ -8,7 +8,8 @@ import "./Navbar.css";
 const Navbar = () => {
 	const cartRef = useRef();
 	const [toggle, setToggle] = useState(false);
-	const { productData, totalPrice, totalQuantities, cartItems, showCart, setShowCart } = useStateContext();
+	const { productData, totalPrice, totalQuantities, setTotalQuantities, cartItems, onRemove, showCart, setShowCart } =
+		useStateContext();
 
 	return (
 		<nav className='app__navbar'>
@@ -66,7 +67,7 @@ const Navbar = () => {
 			<div className='app__cta-btns'>
 				<div className='app__cta-cart'>
 					<button type='button' onClick={() => setShowCart(true)}>
-						{totalQuantities > 0 && <span className='cart-item-qty'>{totalQuantities}</span>}
+						{cartItems > 0 && <span className='cart-item-qty'>{cartItems}</span>}
 						<img src={images.cartIcon} alt='cart' />
 					</button>
 					{showCart && (
@@ -76,27 +77,28 @@ const Navbar = () => {
 							</div>
 							<div className='app__cart-items'>
 								<div className='app__cart-items-cont'>
-									{cartItems.length < 1 && <div className='empty-cart'>Your cart is empty.</div>}
-									{cartItems.length >= 1 && (
+									{cartItems < 1 && <div className='empty-cart'>Your cart is empty.</div>}
+									{cartItems >= 1 && (
 										<div className='item-in-cart'>
 											<div className='item-img-cont'>
 												<img className='item-img' src={images.product1T} alt='shoe thumbnail' />
 											</div>
 											<div className='item-desc'>
-												<h3 className='item-title'>Full Limited Edition Sneakers</h3>
+												<h3 className='item-title'>{productData.title}</h3>
 												<div className='item-price-cont'>
 													<span className='total-qty'>
-														${productData.price} x {cartItems.length}{" "}
+														${productData.price.toFixed(2)} x {cartItems}
+														{"  "}
 													</span>
-													<span className='total-price'>${(productData.price * cartItems.length).toFixed(2)}</span>
+													<span className='total-price'> ${(productData.price * cartItems).toFixed(2)}</span>
 												</div>
 											</div>
-											<button type='button' className='item-delete'>
+											<button type='button' className='item-delete' onClick={onRemove}>
 												<img src={images.deleteIcon} alt='delete' />
 											</button>
 										</div>
 									)}
-									{cartItems.length >= 1 && (
+									{cartItems >= 1 && (
 										<button type='button' className='in-cart-btn'>
 											Checkout
 										</button>

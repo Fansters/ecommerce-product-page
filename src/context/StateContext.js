@@ -4,7 +4,7 @@ const Context = createContext();
 
 export const StateContext = ({ children }) => {
 	const [showCart, setShowCart] = useState(false);
-	const [cartItems, setCartItems] = useState([]);
+	const [cartItems, setCartItems] = useState(0);
 	const [totalPrice, setTotalPrice] = useState(0);
 	const [totalQuantities, setTotalQuantities] = useState(0);
 	const [qty, setQty] = useState(1);
@@ -19,33 +19,20 @@ export const StateContext = ({ children }) => {
 		price: 125,
 	};
 
-	const onAdd = (product, quantity) => {
-		const checkProductInCart = cartItems.find((item) => item._id === product._id);
-		setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
-		setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
-
-		if (checkProductInCart) {
-			const updatedCartItems = cartItems.map((cartProduct) => {
-				if (cartProduct._id === product._id)
-					return {
-						...cartProduct,
-						quantity: cartProduct.quantity + quantity,
-					};
-			});
-			setCartItems(updatedCartItems);
-		} else {
-			product.quantity = quantity;
-			setCartItems([...cartItems, { ...product }]);
-		}
+	const onAdd = () => {
+		// const checkProductInCart = cartItems.find((item) => item._id === product._id);
+		setCartItems((prevCartItems) => prevCartItems + 1);
+		// setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
+		// setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 	};
 
-	const onRemove = (product) => {
-		foundProduct = cartItems.find((item) => item._id === product._id);
-		const newCartItems = cartItems.filter((item) => item._id !== product._id);
+	const onRemove = () => {
+		setCartItems((prevCartItems) => prevCartItems - prevCartItems);
+		// foundProduct = cartItems.find((item) => item._id === product._id);
+		// const newCartItems = cartItems.filter((item) => item._id !== product._id);
 
-		setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
-		setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity);
-		setCartItems(newCartItems);
+		// setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
+		// setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity);
 	};
 
 	const toggleCartItemQuantity = (id, val) => {

@@ -9,10 +9,7 @@ const Product = () => {
 	let [index, setIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
 
-	const { productData, decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
-
-	// product data
-	
+	const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
 
 	const toggleIsOpen = () => {
 		setIsOpen(!isOpen);
