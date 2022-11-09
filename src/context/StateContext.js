@@ -10,7 +10,14 @@ export const StateContext = ({ children }) => {
 	const [qty, setQty] = useState(1);
 
 	let foundProduct;
+
 	// let index;
+
+	const productData = {
+		title: "Fall limited edition sneakers",
+		id: "1a2b3c",
+		price: 125,
+	};
 
 	const onAdd = (product, quantity) => {
 		const checkProductInCart = cartItems.find((item) => item._id === product._id);
@@ -89,6 +96,7 @@ export const StateContext = ({ children }) => {
 				setCartItems,
 				setTotalPrice,
 				setTotalQuantities,
+				productData,
 			}}
 		>
 			{children}

@@ -8,7 +8,7 @@ import "./Navbar.css";
 const Navbar = () => {
 	const cartRef = useRef();
 	const [toggle, setToggle] = useState(false);
-	const { totalPrice, totalQuantities, cartItems, showCart, setShowCart } = useStateContext();
+	const { productData, totalPrice, totalQuantities, cartItems, showCart, setShowCart } = useStateContext();
 
 	return (
 		<nav className='app__navbar'>
@@ -76,25 +76,31 @@ const Navbar = () => {
 							</div>
 							<div className='app__cart-items'>
 								<div className='app__cart-items-cont'>
-									{/* {cartItems.length < 1 && <div className='empty-cart'>Your cart is empty.</div>} */}
-									<div className='item-in-cart'>
-										<div className='item-img-cont'>
-											<img className='item-img' src={images.product1T} alt='shoe thumbnail' />
-										</div>
-										<div className='item-desc'>
-											<h3 className='item-title'>Full Limited Edition Sneakers</h3>
-											<div className='item-price-cont'>
-												<span className='total-qty'>$125.00 x 3 </span>
-												<span className='total-price'>$375.00</span>
+									{cartItems.length < 1 && <div className='empty-cart'>Your cart is empty.</div>}
+									{cartItems.length >= 1 && (
+										<div className='item-in-cart'>
+											<div className='item-img-cont'>
+												<img className='item-img' src={images.product1T} alt='shoe thumbnail' />
 											</div>
+											<div className='item-desc'>
+												<h3 className='item-title'>Full Limited Edition Sneakers</h3>
+												<div className='item-price-cont'>
+													<span className='total-qty'>
+														${productData.price} x {cartItems.length}{" "}
+													</span>
+													<span className='total-price'>${(productData.price * cartItems.length).toFixed(2)}</span>
+												</div>
+											</div>
+											<button type='button' className='item-delete'>
+												<img src={images.deleteIcon} alt='delete' />
+											</button>
 										</div>
-										<button type='button' className='item-delete'>
-											<img src={images.deleteIcon} alt='delete' />
+									)}
+									{cartItems.length >= 1 && (
+										<button type='button' className='in-cart-btn'>
+											Checkout
 										</button>
-									</div>
-                           <button type='button' className='in-cart-btn'>
-                              Checkout
-                           </button>
+									)}
 								</div>
 							</div>
 						</div>
