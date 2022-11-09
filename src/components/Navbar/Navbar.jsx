@@ -8,8 +8,7 @@ import "./Navbar.css";
 const Navbar = () => {
 	const cartRef = useRef();
 	const [toggle, setToggle] = useState(false);
-	const { productData, totalPrice, totalQuantities, setTotalQuantities, cartItems, onRemove, showCart, setShowCart } =
-		useStateContext();
+	const { productData, cartQty, cartItems, onRemove, showCart, setShowCart } = useStateContext();
 
 	return (
 		<nav className='app__navbar'>

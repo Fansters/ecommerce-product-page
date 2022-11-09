@@ -10,7 +10,7 @@ export const StateContext = ({ children }) => {
 	const [qty, setQty] = useState(1);
 
 	let foundProduct;
-
+   let cartQty = qty;
 	// let index;
 
 	const productData = {
@@ -21,7 +21,7 @@ export const StateContext = ({ children }) => {
 
 	const onAdd = () => {
 		// const checkProductInCart = cartItems.find((item) => item._id === product._id);
-		setCartItems((prevCartItems) => prevCartItems + 1);
+		setCartItems((prevCartItems) => prevCartItems + cartQty);
 		// setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
 		// setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 	};
@@ -34,7 +34,7 @@ export const StateContext = ({ children }) => {
 		// setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
 		// setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity);
 	};
-
+	
 	const toggleCartItemQuantity = (id, val) => {
 		foundProduct = cartItems.find((item) => item._id === id);
 		// index = cartItems.findIndex((product) => product._id === id);
@@ -84,6 +84,7 @@ export const StateContext = ({ children }) => {
 				setTotalPrice,
 				setTotalQuantities,
 				productData,
+				cartQty,
 			}}
 		>
 			{children}
