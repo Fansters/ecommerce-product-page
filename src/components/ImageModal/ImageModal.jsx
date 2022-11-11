@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { images } from "../../constants";
 
 import "./ImageModal.css";
@@ -16,10 +18,25 @@ const ImageModal = (props) => {
 		return null;
 	}
 
+	const img = {
+		visible: { opacity: 1 },
+		hidden: { opacity: 0 },
+	};
+	const item = {
+		visible: { opacity: 1, transition: { duration: 1 } },
+		hidden: { opacity: 0, transition: { duration: 1 } },
+	};
+
 	return (
 		<div className='lightbox-modal'>
 			{props.toggleSwitch ? (
-				<div className='lightbox-div'>
+				<motion.div
+					initial='hidden'
+					animate='visible'
+					// transition={{ duration: 0.4 }}
+					variants={img}
+					className='lightbox-div'
+				>
 					<div className='lightbox-big-img-cont noselect'>
 						<img src={images.bigImgs[index]} alt='lightbox shoe' className='lightbox-img noselect' />
 						<div className='close-icon' onClick={props.closeFunc}>
@@ -32,13 +49,13 @@ const ImageModal = (props) => {
 								</svg>
 							</button>
 						</div>
-						<div className='prev-icon' onClick={prevSlide}>
+						<motion.div variants={item} whileTap={{ scale: 1.2 }} className='prev-icon' onClick={prevSlide}>
 							<button type='button'>
 								<svg width='16' height='22' xmlns='http://www.w3.org/2000/svg'>
 									<path d='M11 1 3 9l8 8' stroke-width='3' fill='#fff' fill-rule='evenodd' />
 								</svg>
 							</button>
-						</div>
+						</motion.div>
 						<div className='next-icon' onClick={nextSlide}>
 							<button type='button'>
 								<svg width='13' height='22' xmlns='http://www.w3.org/2000/svg'>
@@ -60,7 +77,7 @@ const ImageModal = (props) => {
 							</div>
 						))}
 					</div>
-				</div>
+				</motion.div>
 			) : null}
 		</div>
 	);

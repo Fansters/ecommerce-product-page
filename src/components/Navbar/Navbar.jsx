@@ -28,16 +28,14 @@ const Navbar = () => {
 						<>
 							<motion.div
 								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{ duration: 0.5 }}
+								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
 								className='app__black-bg'
-								onClick={() => setToggle(false)}
+								// onClick={() => setToggle(false)}
 							>
 								<motion.div
 									whileInView={{ x: [-260, 0], opacity: 1 }}
-									transition={{ duration: 0.3 }}
-									exit={{ x: [0, -260] }}
+									exit={{ x: [0, -260], opacity: 1 }}
 									className='app__menu-container'
 								>
 									<div onClick={() => setToggle(false)}>

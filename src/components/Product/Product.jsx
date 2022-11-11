@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { data, images } from "../../constants";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion,  } from "framer-motion";
 import ImageModal from "../ImageModal/ImageModal";
 
 import { useStateContext } from "../../context/StateContext";
@@ -37,7 +37,7 @@ const Product = () => {
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ x: [-100, 0], opacity: 1 }}
-						transition={{ duration: 0.8 }}
+						transition={{ duration: 0.5 }}
 						className='app__product-images'
 					>
 						{/* mobile imgs */}
@@ -86,7 +86,7 @@ const Product = () => {
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ x: [100, 0], opacity: 1 }}
-						transition={{ duration: 0.8 }}
+						transition={{ duration: 0.5 }}
 						className='app__product-desc'
 					>
 						<p className='app__company-title'>{data.shoes[0].company}</p>
