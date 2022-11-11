@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { images } from "../constants";
 
 const Context = createContext();
 
@@ -11,7 +12,12 @@ export const StateContext = ({ children }) => {
 
 	const productData = {
 		title: "Fall limited edition sneakers",
+		img: images.product1T,
 		price: 125,
+	};
+
+	const toggleIsOpen = () => {
+		setShowCart(!showCart);
 	};
 
 	const onAdd = () => {
@@ -46,6 +52,7 @@ export const StateContext = ({ children }) => {
 				onAdd,
 				onRemove,
 				productData,
+				toggleIsOpen,
 			}}
 		>
 			{children}

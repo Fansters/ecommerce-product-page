@@ -29,7 +29,8 @@ const Product = () => {
 	}
 	return (
 		<>
-			<div className='app__product' onClick={() => setShowCart(false)}>
+      {/* removed onclikc for cart dissapearing */}
+			<div className='app__product'>
 				<div className='app__product-container'>
 					<div className='app__product-images'>
 						{/* mobile imgs */}
