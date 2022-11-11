@@ -99,16 +99,7 @@ ul li:hover #navbar__divv {
 	font-weight: 700;
 }
 /*  */
-.app__cart-info {
-	position: absolute;
-	top: 60px;
-	left: -175px;
-	background-color: white;
-	width: 330px;
-	height: 250px;
-	border-radius: 10px;
-	box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
-}
+
 .app__cart-title {
 	padding: 20px;
 	border-bottom: 1px solid var(--grayish-blue);
@@ -271,10 +262,46 @@ ul li:hover #navbar__divv {
 	.app__cta-cart {
 		padding-right: 1.5rem;
 	}
+	.app__cart-info {
+		position: absolute;
+		top: 60px;
+		right: -53px;
+		background-color: white;
+		width: 330px;
+		height: 250px;
+		z-index: 9999;
+		border-radius: 10px;
+		box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
+	}
+	.item-title,
+	.total-qty,
+	.total-price {
+		font-size: 14px;
+	}
 
 	.app__cta-avatar img {
 		width: 100%;
 		height: 30px;
+	}
+}
+@media screen and (max-width: 21.875rem) {
+	.item-title,
+	.total-qty,
+	.total-price {
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 28.125rem) {
+   .app__cart-info {
+		position: absolute;
+		top: 60px;
+		right: -53px;
+		background-color: white;
+		width: 96vw;
+		height: 250px;
+		z-index: 9999;
+		border-radius: 10px;
+		box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
 	}
 }
 @media screen and (max-width: 62.5rem) {
@@ -292,10 +319,32 @@ ul li:hover #navbar__divv {
 	.app__navbar {
 		width: 100%;
 	}
+	.app__cart-info {
+		position: absolute;
+		top: 60px;
+		left: -230px;
+		background-color: white;
+		width: 330px;
+		height: 250px;
+		z-index: 9999;
+		border-radius: 10px;
+		box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
+	}
 }
 @media screen and (min-width: 81.25rem) {
 	.app__navbar {
-		width: 70%;
+		width: 80%;
+	}
+   .app__cart-info {
+		position: absolute;
+		top: 60px;
+		left: -170px;
+		background-color: white;
+		width: 330px;
+		height: 250px;
+		z-index: 9999;
+		border-radius: 10px;
+		box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
 	}
 }
 
