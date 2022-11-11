@@ -1,14 +1,13 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 import { images } from "../../constants";
 import { useStateContext } from "../../context/StateContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-	const cartRef = useRef();
 	const [toggle, setToggle] = useState(false);
-	const { productData, cartQty, cartItems, onRemove, showCart, setShowCart } = useStateContext();
+	const { productData, cartItems, onRemove, showCart, setShowCart } = useStateContext();
 
 	return (
 		<nav className='app__navbar'>
@@ -70,7 +69,7 @@ const Navbar = () => {
 						<img src={images.cartIcon} alt='cart' />
 					</button>
 					{showCart && (
-						<div className='app__cart-info' ref={cartRef} onMouseLeave={() => setShowCart(false)}>
+						<div className='app__cart-info' onMouseLeave={() => setShowCart(false)}>
 							<div className='app__cart-title'>
 								<p className='app__cart-heading'>Cart</p>
 							</div>

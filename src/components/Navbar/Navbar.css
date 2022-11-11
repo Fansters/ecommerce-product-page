@@ -284,6 +284,7 @@ ul li:hover #navbar__divv {
 		height: 30px;
 	}
 }
+/* for 320px devices */
 @media screen and (max-width: 21.875rem) {
 	.item-title,
 	.total-qty,
@@ -291,8 +292,9 @@ ul li:hover #navbar__divv {
 		font-size: 13px;
 	}
 }
+/* from 350px to 450px  */
 @media screen and (max-width: 28.125rem) {
-   .app__cart-info {
+	.app__cart-info {
 		position: absolute;
 		top: 60px;
 		right: -53px;
@@ -331,11 +333,12 @@ ul li:hover #navbar__divv {
 		box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
 	}
 }
+/* from 1300px */
 @media screen and (min-width: 81.25rem) {
 	.app__navbar {
 		width: 80%;
 	}
-   .app__cart-info {
+	.app__cart-info {
 		position: absolute;
 		top: 60px;
 		left: -170px;
@@ -347,7 +350,7 @@ ul li:hover #navbar__divv {
 		box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
 	}
 }
-
+/* from 1600px */
 @media screen and (min-width: 100rem) {
 	.app__navbar {
 		width: 84.375rem;
