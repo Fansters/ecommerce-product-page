@@ -22,28 +22,43 @@ const Navbar = () => {
 				<div className='app__logo app__logo-mobile'>
 					<a href='/'>sneakers</a>
 				</div>
-				{toggle && (
-					<>
-						<div className='app__black-bg' onClick={() => setToggle(false)}>
-							<div className='app__menu-container'>
-								<div onClick={() => setToggle(false)}>
-									<button type='button'>
-										<img src={images.closeIcon} alt='close' />
-									</button>
-								</div>
-								<ul>
-									{["collections", "men", "women", "about", "contact"].map((item) => (
-										<li key={item}>
-											<a href={`#${item}`} onClick={() => setToggle(false)}>
-												{item}
-											</a>
-										</li>
-									))}
-								</ul>
-							</div>
-						</div>
-					</>
-				)}
+
+				<AnimatePresence>
+					{toggle && (
+						<>
+							<motion.div
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ duration: 0.5 }}
+								exit={{ opacity: 0 }}
+								className='app__black-bg'
+								onClick={() => setToggle(false)}
+							>
+								<motion.div
+									whileInView={{ x: [-260, 0], opacity: 1 }}
+									transition={{ duration: 0.3 }}
+									exit={{ x: [0, -260] }}
+									className='app__menu-container'
+								>
+									<div onClick={() => setToggle(false)}>
+										<button type='button'>
+											<img src={images.closeIcon} alt='close' />
+										</button>
+									</div>
+									<ul>
+										{["collections", "men", "women", "about", "contact"].map((item) => (
+											<li key={item}>
+												<a href={`#${item}`} onClick={() => setToggle(false)}>
+													{item}
+												</a>
+											</li>
+										))}
+									</ul>
+								</motion.div>
+							</motion.div>
+						</>
+					)}
+				</AnimatePresence>
 			</div>
 			{/* Desktop menu */}
 			<div className='app__logo-menu-cont'>
@@ -78,19 +93,12 @@ const Navbar = () => {
 								transition={{ duration: 0.4 }}
 								exit={{ y: -20, opacity: 0 }}
 								className='app__cart-info'
-								// onMouseLeave={() => setShowCart(false)}
 							>
 								<div className='app__cart-title'>
 									<p className='app__cart-heading'>Cart</p>
 								</div>
 								<div className='app__cart-items'>
-									<motion.div
-										key='cartCont'
-										initial={{ x: -20, opacity: 0 }}
-										whileInView={{ x: 0, opacity: 1 }}
-										transition={{ duration: 0.4 }}
-										className='app__cart-items-cont'
-									>
+									<div className='app__cart-items-cont'>
 										{cartItems < 1 && <div className='empty-cart'>Your cart is empty.</div>}
 										{cartItems >= 1 && (
 											<div className='item-in-cart'>
@@ -117,7 +125,7 @@ const Navbar = () => {
 												Checkout
 											</button>
 										)}
-									</motion.div>
+									</div>
 								</div>
 							</motion.div>
 						)}

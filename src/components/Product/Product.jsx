@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { data, images } from "../../constants";
+import { motion, AnimatePresence } from "framer-motion";
 import ImageModal from "../ImageModal/ImageModal";
+
 import { useStateContext } from "../../context/StateContext";
 
 import "./Product.css";
@@ -9,7 +11,7 @@ const Product = () => {
 	let [index, setIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
 
-	const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
+	const { decQty, incQty, qty, onAdd } = useStateContext();
 
 	const toggleIsOpen = () => {
 		setIsOpen(!isOpen);
@@ -29,10 +31,15 @@ const Product = () => {
 	}
 	return (
 		<>
-      {/* removed onclikc for cart dissapearing */}
+			{/* removed onclikc for cart dissapearing */}
 			<div className='app__product'>
 				<div className='app__product-container'>
-					<div className='app__product-images'>
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ x: [-100, 0], opacity: 1 }}
+						transition={{ duration: 0.8 }}
+						className='app__product-images'
+					>
 						{/* mobile imgs */}
 						<div className='app__product-img mobile noselect'>
 							<img src={images.bigImgs[index]} alt='Shoe' className='big-image noselect' />
@@ -74,9 +81,14 @@ const Product = () => {
 							))}
 						</div>
 						{/* end of thumbnail imgs */}
-					</div>
+					</motion.div>
 
-					<div className='app__product-desc'>
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ x: [100, 0], opacity: 1 }}
+						transition={{ duration: 0.8 }}
+						className='app__product-desc'
+					>
 						<p className='app__company-title'>{data.shoes[0].company}</p>
 						<h2 className='app__product-title'>{data.shoes[0].title}</h2>
 						<p className='app__product-text'>{data.shoes[0].desc}</p>
@@ -112,7 +124,7 @@ const Product = () => {
 								</button>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</>
