@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { images } from "../../constants";
 
@@ -22,9 +22,13 @@ const ImageModal = (props) => {
 		visible: { opacity: 1 },
 		hidden: { opacity: 0 },
 	};
-	const item = {
-		visible: { opacity: 1, transition: { duration: 1 } },
-		hidden: { opacity: 0, transition: { duration: 1 } },
+	const itemPrev = {
+		visible: { opacity: 1, y: "-50%", x: 0, transition: { duration: 0.3, delay: 0.2 } },
+		hidden: { opacity: 0, y: "-50", x: -30 },
+	};
+	const itemNext = {
+		visible: { opacity: 1, y: "-50%", x: 0, transition: { duration: 0.3, delay: 0.2 } },
+		hidden: { opacity: 0, y: "-50", x: 30 },
 	};
 
 	return (
@@ -49,24 +53,28 @@ const ImageModal = (props) => {
 								</svg>
 							</button>
 						</div>
-						<motion.div variants={item} whileTap={{ scale: 1.2 }} className='prev-icon' onClick={prevSlide}>
-							<button type='button'>
+						<motion.div variants={itemPrev} className='prev-icon' onClick={prevSlide}>
+							<motion.button whileTap={{ scale: 0.9 }} type='button'>
 								<svg width='16' height='22' xmlns='http://www.w3.org/2000/svg'>
 									<path d='M11 1 3 9l8 8' stroke-width='3' fill='#fff' fill-rule='evenodd' />
 								</svg>
-							</button>
+							</motion.button>
 						</motion.div>
-						<div className='next-icon' onClick={nextSlide}>
-							<button type='button'>
+						<motion.div variants={itemNext} className='next-icon' onClick={nextSlide}>
+							<motion.button whileTap={{ scale: 0.9 }} type='button'>
 								<svg width='13' height='22' xmlns='http://www.w3.org/2000/svg'>
 									<path d='m2 1 8 8-8 8' stroke-width='3' fill='#fff' fill-rule='evenodd' />
 								</svg>
-							</button>
-						</div>
+							</motion.button>
+						</motion.div>
 					</div>
 					<div className='lightbox-thumb-img-cont'>
 						{images.smallImgs?.map((item, i) => (
-							<div key={i} className={i === index ? "small-div-image selected-div" : "small-div-image noselect"}>
+							<motion.div
+								whileTap={{ scale: 0.6 }}
+								key={i}
+								className={i === index ? "small-div-image selected-div" : "small-div-image noselect"}
+							>
 								<img
 									src={item}
 									alt='small Shoe'
@@ -74,7 +82,7 @@ const ImageModal = (props) => {
 									className={i === index ? " selected-image" : "noselect"}
 									onClick={() => setIndex(i)}
 								/>
-							</div>
+							</motion.div>
 						))}
 					</div>
 				</motion.div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { data, images } from "../../constants";
-import { motion,  } from "framer-motion";
+import { motion } from "framer-motion";
 import ImageModal from "../ImageModal/ImageModal";
 
 import { useStateContext } from "../../context/StateContext";
@@ -69,7 +69,11 @@ const Product = () => {
 						{/* thumnbnail imgs */}
 						<div className='app__product-thumbnail'>
 							{images.smallImgs?.map((item, i) => (
-								<div key={i} className={i === index ? "small-div-image selected-div" : "small-div-image"}>
+								<motion.div
+									whileTap={{ scale: 0.6 }}
+									key={i}
+									className={i === index ? "small-div-image selected-div" : "small-div-image"}
+								>
 									<img
 										src={item}
 										alt='small Shoe'
@@ -77,7 +81,7 @@ const Product = () => {
 										className={i === index ? " selected-image" : ""}
 										onClick={() => setIndex(i)}
 									/>
-								</div>
+								</motion.div>
 							))}
 						</div>
 						{/* end of thumbnail imgs */}
