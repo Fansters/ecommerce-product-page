@@ -77,11 +77,11 @@ ul li:hover #navbar__divv {
 }
 
 .app__cta-cart {
-	padding-right: 2.25rem;
+	padding-right: 2rem;
 	position: relative;
-	/* cursor: pointer; */
 }
 .app__cta-cart button {
+   padding: .375rem;
 	position: relative;
 	cursor: pointer;
 }

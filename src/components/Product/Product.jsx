@@ -108,17 +108,17 @@ const Product = () => {
 						<div className='app__product-ctas'>
 							<div className='app__quantity'>
 								<p className='app__quantity-desc app__flex'>
-									<span className='minus app__flex' onClick={decQty}>
-										<button type='button'>
+									<button type='button' className='minusBtn'>
+										<span className='minus app__flex' onClick={decQty}>
 											<img src={images.minusIcon} alt='minus' />
-										</button>
-									</span>
+										</span>
+									</button>
 									<span className='num app__flex'>{qty}</span>
-									<span className='plus app__flex' onClick={incQty}>
-										<button type='button'>
+									<button type='button' className='plusBtn '>
+										<span className='plus app__flex' onClick={incQty}>
 											<img src={images.plusIcon} alt='plus' />
-										</button>
-									</span>
+										</span>
+									</button>
 								</p>
 							</div>
 							<div className='app__buttons'>

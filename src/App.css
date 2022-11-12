@@ -34,4 +34,7 @@ footer a:hover {
 		left: 5%;
 		transform: translateX(-50%);
 	}
+	button:focus {
+		outline: 2px solid var(--color-orange);
+	}
 }

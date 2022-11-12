@@ -194,6 +194,14 @@ svg {
 	height: 3.75rem;
 	cursor: pointer;
 }
+.minus {
+	border-radius: 10px 0 0 10px;
+	z-index: 999;
+}
+.plus {
+	border-radius: 0 10px 10px 0;
+}
+
 .app__quantity button {
 	cursor: pointer;
 	border: none;
@@ -309,10 +317,16 @@ svg {
 	.app__quantity span {
 		width: 100%;
 	}
-	.minus {
+	.app__quantity button {
+		width: 5.75rem;
+		cursor: pointer;
+		border: none;
+		background-color: transparent;
+	}
+	.minusBtn {
 		border-radius: 10px 0 0 10px;
 	}
-	.plus {
+	.plusBtn {
 		border-radius: 0 10px 10px 0;
 	}
 	.app__buttons {
