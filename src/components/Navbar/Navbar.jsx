@@ -110,7 +110,20 @@ const Navbar = () => {
 								</div>
 								<div className='app__cart-items'>
 									<div className='app__cart-items-cont'>
-										{cartItems < 1 && <div className='empty-cart'>Your cart is empty.</div>}
+										<AnimatePresence>
+											{cartItems < 1 && (
+												<motion.div
+													key='cartEmpty'
+													initial={{ opacity: 0 }}
+													whileInView={{ y: [-15, 0], opacity: 1 }}
+													transition={{ duration: 0.3, delay: 0.2 }}
+													exit={{ y: -10, opacity: 0, transition: { delay: 1.2 } }}
+													className='empty-cart'
+												>
+													Your cart is empty.
+												</motion.div>
+											)}
+										</AnimatePresence>
 										{cartItems >= 1 && (
 											<div className='item-in-cart'>
 												<div className='item-img-cont'>
