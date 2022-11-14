@@ -79,7 +79,20 @@ const Navbar = () => {
 			<div className='app__cta-btns'>
 				<div className='app__cta-cart'>
 					<button type='button' onClick={toggleIsOpen}>
-						{cartItems > 0 && <span className='cart-item-qty'>{cartItems}</span>}
+						<AnimatePresence>
+							{cartItems > 0 && (
+								<motion.span
+									key='cartQty'
+									initial={{ opacity: 0 }}
+									whileInView={{ y: [-5, 0], opacity: 1 }}
+									transition={{ duration: 0.3 }}
+									exit={{ y: -5, opacity: 0 }}
+									className='cart-item-qty'
+								>
+									{cartItems}
+								</motion.span>
+							)}
+						</AnimatePresence>
 						<img src={images.cartIcon} alt='cart' />
 					</button>
 					<AnimatePresence>

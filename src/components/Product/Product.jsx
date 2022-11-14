@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { data, images } from "../../constants";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import ImageModal from "../ImageModal/ImageModal";
 
 import { useStateContext } from "../../context/StateContext";
@@ -12,6 +12,17 @@ const Product = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const { decQty, incQty, qty, onAdd } = useStateContext();
+
+	let boxVariants = {};
+	const isMobile = window.innerWidth > 1001;
+	if (!isMobile) {
+		boxVariants = {
+			hover: {
+				scale: 0.7,
+				rotate: 10,
+			},
+		};
+	}
 
 	const toggleIsOpen = () => {
 		setIsOpen(!isOpen);
@@ -62,7 +73,17 @@ const Product = () => {
 
 						{/* desktop imgs */}
 						<div className='app__product-img desktop' onClick={toggleIsOpen}>
-							<img src={images.bigImgs[index]} alt='Shoe' className='big-image' />
+							<AnimatePresence>
+								<motion.img
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									key='image'
+									src={images.bigImgs[index]}
+									alt='Shoe'
+									className='big-image'
+								/>
+							</AnimatePresence>
 						</div>
 						{/* lightbox modal */}
 						<ImageModal closeFunc={toggleIsOpen} toggleSwitch={isOpen} modalImg={index} indexSetting={setIndex} />
@@ -87,6 +108,7 @@ const Product = () => {
 						{/* end of thumbnail imgs */}
 					</motion.div>
 
+					{/* description  */}
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ x: [100, 0], opacity: 1 }}
@@ -109,9 +131,9 @@ const Product = () => {
 							<div className='app__quantity'>
 								<p className='app__quantity-desc app__flex'>
 									<button type='button' className='minusBtn'>
-										<span className='minus app__flex' onClick={decQty}>
+										<motion.span whileTap={{ scale: 1.4 }} className='minus app__flex' onClick={decQty}>
 											<img src={images.minusIcon} alt='minus' />
-										</span>
+										</motion.span>
 									</button>
 									<span className='num app__flex'>{qty}</span>
 									<button type='button' className='plusBtn '>
