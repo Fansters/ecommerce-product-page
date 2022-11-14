@@ -205,6 +205,10 @@ svg {
 	cursor: pointer;
 	border: none;
 	background-color: var(--light-grayish-blue);
+	border-radius: 10px 0 0 10px;
+}
+.app__quantity:nth-child(3) {
+	border-radius: 0 10px 10px 0;
 }
 .app__quantity img {
 	transition: all 0.2s ease-in-out;
@@ -321,7 +325,7 @@ svg {
 		width: 5.75rem;
 		cursor: pointer;
 		border: none;
-		background-color: transparent;
+		background-color: var(--light-grayish-blue);
 	}
 	.minusBtn {
 		border-radius: 10px 0 0 10px;

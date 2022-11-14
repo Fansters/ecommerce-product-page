@@ -84,7 +84,7 @@ const Navbar = () => {
 								<motion.span
 									key='cartQty'
 									initial={{ opacity: 0 }}
-									whileInView={{ y: [-5, 0], opacity: 1 }}
+									animate={{ y: [-5, 0], opacity: 1 }}
 									transition={{ duration: 0.3 }}
 									exit={{ y: -5, opacity: 0 }}
 									className='cart-item-qty'

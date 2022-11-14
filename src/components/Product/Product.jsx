@@ -14,12 +14,12 @@ const Product = () => {
 	const { decQty, incQty, qty, onAdd } = useStateContext();
 
 	let boxVariants = {};
-	const isMobile = window.innerWidth > 1001;
+	const isMobile = window.innerWidth < 1001;
 	if (!isMobile) {
 		boxVariants = {
-			hover: {
-				scale: 0.7,
-				rotate: 10,
+			spin: {
+				duration: 0.2,
+				scale: 1.4,
 			},
 		};
 	}
@@ -131,15 +131,21 @@ const Product = () => {
 							<div className='app__quantity'>
 								<p className='app__quantity-desc app__flex'>
 									<button type='button' className='minusBtn'>
-										<motion.span whileTap={{ scale: 1.4 }} className='minus app__flex' onClick={decQty}>
+										<motion.span variants={boxVariants} whileTap='spin' className='minus app__flex' onClick={decQty}>
 											<img src={images.minusIcon} alt='minus' />
 										</motion.span>
 									</button>
 									<span className='num app__flex'>{qty}</span>
 									<button type='button' className='plusBtn '>
-										<span className='plus app__flex' onClick={incQty}>
+										<motion.span
+											variants={boxVariants}
+											whileTap='spin'
+											transition={{ repeatType: "loop" }}
+											className='plus app__flex'
+											onClick={incQty}
+										>
 											<img src={images.plusIcon} alt='plus' />
-										</span>
+										</motion.span>
 									</button>
 								</p>
 							</div>
