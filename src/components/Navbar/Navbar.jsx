@@ -116,39 +116,56 @@ const Navbar = () => {
 													key='cartEmpty'
 													initial={{ opacity: 0 }}
 													whileInView={{ y: [-15, 0], opacity: 1 }}
-													transition={{ duration: 0.3, delay: 0.2 }}
-													exit={{ y: -10, opacity: 0, transition: { delay: 1.2 } }}
+													transition={{ duration: 0.3, delay: 0.4 }}
+													exit={{ y: -10, opacity: 0, transition: { delay: 0.2 } }}
 													className='empty-cart'
 												>
 													Your cart is empty.
 												</motion.div>
 											)}
 										</AnimatePresence>
-										{cartItems >= 1 && (
-											<div className='item-in-cart'>
-												<div className='item-img-cont'>
-													<img className='item-img' src={productData.img} alt='shoe thumbnail' />
-												</div>
-												<div className='item-desc'>
-													<h3 className='item-title'>{productData.title}</h3>
-													<div className='item-price-cont'>
-														<span className='total-qty'>
-															${productData.price.toFixed(2)} x {cartItems}
-															{"  "}
-														</span>
-														<span className='total-price'> ${(productData.price * cartItems).toFixed(2)}</span>
+										<AnimatePresence>
+											{cartItems >= 1 && (
+												<motion.div
+													initial={{ opacity: 0 }}
+													whileInView={{ y: [-40, 0], opacity: 1 }}
+													transition={{ duration: 0.4, delay: 0.6 }}
+													exit={{ y: -20, opacity: 0, transition: { delay: 0 } }}
+													className='item-in-cart'
+												>
+													<div className='item-img-cont'>
+														<img className='item-img' src={productData.img} alt='shoe thumbnail' />
 													</div>
-												</div>
-												<button type='button' className='item-delete' onClick={onRemove}>
-													<img src={images.deleteIcon} alt='delete' />
-												</button>
-											</div>
-										)}
-										{cartItems >= 1 && (
-											<button type='button' className='in-cart-btn'>
-												Checkout
-											</button>
-										)}
+													<div className='item-desc'>
+														<h3 className='item-title'>{productData.title}</h3>
+														<div className='item-price-cont'>
+															<span className='total-qty'>
+																${productData.price.toFixed(2)} x {cartItems}
+																{"  "}
+															</span>
+															<span className='total-price'> ${(productData.price * cartItems).toFixed(2)}</span>
+														</div>
+													</div>
+													<button type='button' className='item-delete' onClick={onRemove}>
+														<img src={images.deleteIcon} alt='delete' />
+													</button>
+												</motion.div>
+											)}
+										</AnimatePresence>
+										<AnimatePresence>
+											{cartItems >= 1 && (
+												<motion.button
+													initial={{ opacity: 0 }}
+													whileInView={{ y: [-40, 0], opacity: 1 }}
+													transition={{ duration: 0.4, delay: 0.6 }}
+													exit={{ y: -20, opacity: 0, transition: { delay: 0 } }}
+													type='button'
+													className='in-cart-btn'
+												>
+													Checkout
+												</motion.button>
+											)}
+										</AnimatePresence>
 									</div>
 								</div>
 							</motion.div>
