@@ -1,19 +1,27 @@
 import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "./Navbar.css";
+import { useStateContext } from "../../context/StateContext";
 
 import Cart from "../Cart/Cart";
 import { images } from "../../constants";
-import "./Navbar.css";
 
 const Navbar = () => {
 	const [toggle, setToggle] = useState(false);
+	const { toggleIsOpen } = useStateContext();
 
 	return (
 		<nav className='app__navbar'>
 			{/* Burger menu */}
 			<div className='app__navbar-menu '>
-				<div className='app__flex' onClick={() => setToggle(true)}>
+				<div
+					className='app__flex'
+					onClick={() => {
+						toggleIsOpen();
+						setToggle(true);
+					}}
+				>
 					<button type='button'>
 						<img src={images.menuIcon} alt='menu' />
 					</button>
