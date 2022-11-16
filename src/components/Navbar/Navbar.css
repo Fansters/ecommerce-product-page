@@ -117,10 +117,19 @@ ul li:hover #navbar__divv {
 	height: calc(100% - 60px);
 	padding: 20px 20px 30px 20px;
 }
+.app__cart-items-cont {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
 /* empty-cart */
 .empty-cart {
 	font-weight: var(--font-bold);
 	color: var(--dark-grayish-blue);
+	position: absolute;
+	top: 45%;
+	left: 25%;
+	/* transform: translate(-50%); */
 }
 /* filled cart */
 .item-in-cart {

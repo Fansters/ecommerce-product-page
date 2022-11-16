@@ -102,7 +102,7 @@ const Navbar = () => {
 								initial={{ opacity: 0 }}
 								whileInView={{ y: [-40, 0], opacity: 1 }}
 								transition={{ duration: 0.4 }}
-								exit={{ y: -20, opacity: 0 }}
+								exit={{ y: -20, opacity: 0, transition: { delay: 0.2 } }}
 								className='app__cart-info'
 							>
 								<div className='app__cart-title'>
@@ -116,8 +116,8 @@ const Navbar = () => {
 													key='cartEmpty'
 													initial={{ opacity: 0 }}
 													whileInView={{ y: [-15, 0], opacity: 1 }}
-													transition={{ duration: 0.3, delay: 0.4 }}
-													exit={{ y: -10, opacity: 0, transition: { delay: 0.2 } }}
+													transition={{ duration: 0.2, delay: 0.4 }}
+													exit={{ y: 15, opacity: 0, transition: { delay: 0 } }}
 													className='empty-cart'
 												>
 													Your cart is empty.
@@ -128,9 +128,9 @@ const Navbar = () => {
 											{cartItems >= 1 && (
 												<motion.div
 													initial={{ opacity: 0 }}
-													whileInView={{ y: [-40, 0], opacity: 1 }}
-													transition={{ duration: 0.4, delay: 0.6 }}
-													exit={{ y: -20, opacity: 0, transition: { delay: 0 } }}
+													whileInView={{ y: [-20, 0], opacity: 1 }}
+													transition={{ duration: 0.2, delay: 0.3 }}
+													exit={{ y: 20, opacity: 0, transition: { delay: 0 } }}
 													className='item-in-cart'
 												>
 													<div className='item-img-cont'>
@@ -156,9 +156,9 @@ const Navbar = () => {
 											{cartItems >= 1 && (
 												<motion.button
 													initial={{ opacity: 0 }}
-													whileInView={{ y: [-40, 0], opacity: 1 }}
-													transition={{ duration: 0.4, delay: 0.6 }}
-													exit={{ y: -20, opacity: 0, transition: { delay: 0 } }}
+													whileInView={{ y: [-20, 0], opacity: 1 }}
+													transition={{ duration: 0.2, delay: 0.3 }}
+													exit={{ y: 20, opacity: 0, transition: { delay: 0 } }}
 													type='button'
 													className='in-cart-btn'
 												>
