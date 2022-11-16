@@ -1,7 +1,9 @@
 # Ecommerce product page
+
 ## Welcome! 👋
 
-This is a solution to the [Ecommerce product page](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX).
+This is a solution to the
+[Ecommerce product page](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6).
 
 ### The challenge
 
@@ -13,6 +15,7 @@ Your users should be able to:
 - Switch the large product image by clicking on the small thumbnail images
 - Add items to the cart
 - View the cart and remove items from it
+
 ### Screenshot
 
 ![Screenshot](https://github.com/Fansters/tip-calculator-app-main/blob/master/images/tipCalcPreview.jpg)
