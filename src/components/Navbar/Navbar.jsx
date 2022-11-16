@@ -9,7 +9,7 @@ import { images } from "../../constants";
 
 const Navbar = () => {
 	const [toggle, setToggle] = useState(false);
-	const { toggleIsOpen } = useStateContext();
+	const { showCart, toggleIsOpen } = useStateContext();
 
 	return (
 		<nav className='app__navbar'>
@@ -18,8 +18,8 @@ const Navbar = () => {
 				<div
 					className='app__flex'
 					onClick={() => {
-						toggleIsOpen();
 						setToggle(true);
+						if (showCart === true) return toggleIsOpen();
 					}}
 				>
 					<button type='button'>
