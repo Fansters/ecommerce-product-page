@@ -27,7 +27,7 @@ Your users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- Resposive design
+- Responsive design
 - ReactJS
 - CSS
 
