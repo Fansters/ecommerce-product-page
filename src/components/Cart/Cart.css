@@ -65,7 +65,7 @@
 /* filled cart */
 .item-in-cart {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 }
 .item-img-cont {
