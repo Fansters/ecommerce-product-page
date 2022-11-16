@@ -18,11 +18,11 @@ Your users should be able to:
 
 ### Screenshot
 
-![Screenshot](https://github.com/Fansters/tip-calculator-app-main/blob/master/images/tipCalcPreview.jpg)
+![Screenshot](https://github.com/Fansters/ecommerce-product-page/blob/master/src/assets/e-product-page-screen.jpg)
 
 ### Links
 
-- Solution URL: [Live Preview](https://gilded-gecko-18e93c.netlify.app/)
+- Solution URL: [Live Preview](https://polite-biscochitos-5db46d.netlify.app/)
 
 ### Built with
 
@@ -38,13 +38,13 @@ Your users should be able to:
 - Conditional rendering;
 - Passing data with StateContext;
 
-
 ### Continued development
 
- A lot of things to continue working on:
-   - React hooks;
-   - Framer-motion advanced animations;
-   - Need to deepdive into reactDocs - props and data passing trough parent-child elements
+A lot of things to continue working on:
+
+- React hooks;
+- Framer-motion advanced animations;
+- Need to deepdive into reactDocs - props and data passing trough parent-child elements
 
 ### Useful resources
 
