@@ -28,22 +28,28 @@ Your users should be able to:
 
 - Semantic HTML5 markup
 - Resposive design
-- Vanilla JS
+- ReactJS
 - CSS
 
 ### What I learned
 
-Input validations; Good overall training/exercise with JS;
+- React hooks use;
+- Framer motion use;
+- Conditional rendering;
+- Passing data with StateContext;
+
 
 ### Continued development
 
-- Keep upgrading the JS code for less DRY principle;
-- Html form, label, button elements (MDN docs deepdive);
-- When entering character in custom %number and then clicking on any %btn - error msg stays;
+ A lot of things to continue working on:
+   - React hooks;
+   - Framer-motion advanced animations;
+   - Need to deepdive into reactDocs - props and data passing trough parent-child elements
 
 ### Useful resources
 
-- Data validations - [w3resource](https://www.w3resource.com/javascript/form/all-numbers.php)
+- Data validations - [reactjs.org](https://reactjs.org/docs/conditional-rendering.html)
+- Framer transitions(for img slider) - [framer.com](https://www.framer.com/docs/transition/)
 
 ## Author
 
