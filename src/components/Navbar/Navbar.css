@@ -63,7 +63,7 @@ li {
 	font-size: var(--font-p);
 	/* height: 100%; */
 }
-.app__menu div {
+.app__menu span {
 	width: 110%;
 	height: 0.25rem;
 	background: transparent;
@@ -71,7 +71,7 @@ li {
 	transition: all 0.2s ease-in-out;
 	transform: translateY(-3px);
 }
-ul li:hover #navbar__divv {
+ul li:hover .navbar__link-underline {
 	background-color: var(--color-orange);
 	transform: translateY(2px);
 }
@@ -164,33 +164,12 @@ ul li:hover #navbar__divv {
 	.app__logo-menu-cont {
 		display: none;
 	}
-/* 
-	.app__cta-cart {
-		padding-right: 1.5rem;
-	}
-	.app__cart-info {
-		position: absolute;
-		top: 60px;
-		right: -53px;
-		background-color: white;
-		width: 330px;
-		height: 250px;
-		z-index: 888;
-		border-radius: 10px;
-		box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.153);
-	}
-	.item-title,
-	.total-qty,
-	.total-price {
-		font-size: 14px;
-	} */
 
 	.app__cta-avatar img {
 		width: 100%;
 		height: 30px;
 	}
 }
-
 
 @media screen and (max-width: 62.5rem) {
 	.app__navbar-links li {
@@ -207,7 +186,6 @@ ul li:hover #navbar__divv {
 	.app__navbar {
 		width: 100%;
 	}
-	
 }
 /* from 1300px */
 @media screen and (min-width: 81.25rem) {

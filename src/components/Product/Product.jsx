@@ -41,7 +41,7 @@ const Product = () => {
 		return null;
 	}
 	return (
-		<>
+		<main>
 			{/* removed onclikc for cart dissapearing */}
 			<div className='app__product'>
 				<div className='app__product-container'>
@@ -116,7 +116,7 @@ const Product = () => {
 						className='app__product-desc'
 					>
 						<p className='app__company-title'>{data.shoes[0].company}</p>
-						<h2 className='app__product-title'>{data.shoes[0].title}</h2>
+						<h1 className='app__product-title'>{data.shoes[0].title}</h1>
 						<p className='app__product-text'>{data.shoes[0].desc}</p>
 						<div className='app__prices'>
 							<div className='app__product-newPrice'>
@@ -159,7 +159,7 @@ const Product = () => {
 					</motion.div>
 				</div>
 			</div>
-		</>
+		</main>
 	);
 };
 
