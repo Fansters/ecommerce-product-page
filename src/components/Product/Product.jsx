@@ -152,7 +152,7 @@ const Product = () => {
 							<div className='app__buttons'>
 								<button type='button' className='add-to-cart app__flex' onClick={onAdd}>
 									<img src={images.cartIconWhite} alt='cart icon' />
-									<p className='btn-text'>Add to cart</p>
+									<span className='btn-text'>Add to cart</span>
 								</button>
 							</div>
 						</div>
