@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
+import { useStateContext } from "../../context/StateContext";
 import { images } from "../../constants";
 
 import "./ImageModal.css";
 const ImageModal = (props) => {
-	const [index, setIndex] = useState(props.modalImg);
 	const length = images.smallImgs.length;
+	const { index, setIndex } = useStateContext();
 
 	const nextSlide = () => {
 		setIndex(index === length - 1 ? 0 : index + 1);
