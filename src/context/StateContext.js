@@ -4,6 +4,7 @@ import { images } from "../constants";
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
+	let [index, setIndex] = useState(0);
 	const [showCart, setShowCart] = useState(false);
 	const [cartItems, setCartItems] = useState(0);
 	const [qty, setQty] = useState(1);
@@ -41,6 +42,8 @@ export const StateContext = ({ children }) => {
 	return (
 		<Context.Provider
 			value={{
+				index,
+				setIndex,
 				showCart,
 				setShowCart,
 				cartItems,

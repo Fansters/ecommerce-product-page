@@ -8,10 +8,9 @@ import { useStateContext } from "../../context/StateContext";
 import "./Product.css";
 
 const Product = () => {
-	let [index, setIndex] = useState(0);
 	const [isOpen, setIsOpen] = useState(false);
 
-	const { decQty, incQty, qty, onAdd } = useStateContext();
+	const { decQty, incQty, qty, onAdd, index, setIndex } = useStateContext();
 
 	let boxVariants = {};
 	const isMobile = window.innerWidth < 1001;
