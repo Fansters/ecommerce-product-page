@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import { useStateContext } from "../../context/StateContext";
 import { images } from "../../constants";
 
 import "./ImageModal.css";
 const ImageModal = (props) => {
+	const [index, setIndex] = useState(props.modalImg);
 	const length = images.smallImgs.length;
-	const { index, setIndex } = useStateContext();
 
 	const nextSlide = () => {
 		setIndex(index === length - 1 ? 0 : index + 1);
@@ -43,7 +42,7 @@ const ImageModal = (props) => {
 					className='lightbox-div'
 				>
 					<div className='lightbox-big-img-cont noselect'>
-						<img src={images.bigImgs[setIndex]} alt='lightbox shoe' className='lightbox-img noselect' />
+						<img src={images.bigImgs[index]} alt='lightbox shoe' className='lightbox-img noselect' />
 						<div className='close-icon' onClick={props.closeFunc}>
 							<button type='button'>
 								<svg width='17' height='19' xmlns='http://www.w3.org/2000/svg'>
