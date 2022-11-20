@@ -9,7 +9,7 @@ import "./Product.css";
 
 const Product = () => {
 	const [isOpen, setIsOpen] = useState(false);
-
+// could not solve the imgModal image fix
 	const { decQty, incQty, qty, onAdd, index, setIndex } = useStateContext();
 
 	let boxVariants = {};
